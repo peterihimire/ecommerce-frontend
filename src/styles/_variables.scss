@@ -1,7 +1,7 @@
 :root {
-  // --main-color: #ef8025;
-  --main-color: linear-gradient(to right, #ef8a25, #c833af);
-
+  // --main-color:
+  --main-color: #ef8025;
+  --btn-color: linear-gradient(to right, #ef8a25, #c833af);
   --bg-light: #ffffff;
   --txt-light: #232323;
   // --bg-dark: #10171d;
@@ -10,7 +10,8 @@
 
   --gray-txt: #666666;
   --gray-bg: #f4f7fc;
-  --dark-bg: #0000008e;
+  // --dark-bg: #0000008e;
+  --dark-bg: #000000;
   --gray-color: #e7e7e7;
 
   --form-control-color: #2568ef;

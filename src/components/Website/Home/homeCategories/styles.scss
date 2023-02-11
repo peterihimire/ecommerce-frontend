@@ -1,0 +1,30 @@
+body.dark-mode {
+  .home-categories {
+  }
+}
+
+body.light-mode {
+  .home-categories {
+    padding: 100px 0;
+    .categories-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px 10px;
+
+      .category-item {
+        position: relative;
+        height: 400px;
+        border: solid var(--main-color) 1px;
+        // background-color: aqua;
+        // flex: 1;
+
+        .category-item-info {
+          position: absolute;
+          // display: flex;
+          bottom: 50%;
+          right: 50%;
+        }
+      }
+    }
+  }
+}

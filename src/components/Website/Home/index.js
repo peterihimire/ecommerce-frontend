@@ -1,7 +1,7 @@
 import React from "react";
 import HomeHero from "./hero";
 import WhyChoose from "./whyChoose";
-import BuildingModern from "./buildingModern";
+import HomeCategories from "./homeCategories";
 import Reviews from "./reviews";
 import { Helmet } from "react-helmet";
 
@@ -15,7 +15,7 @@ const HomePage = () => {
       </Helmet>
 
       <HomeHero />
-      <BuildingModern />
+      <HomeCategories />
       <WhyChoose />
       <Reviews />
     </div>
