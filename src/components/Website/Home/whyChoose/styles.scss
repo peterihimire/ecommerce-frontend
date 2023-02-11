@@ -1,0 +1,181 @@
+body.dark-mode {
+  .why-chose {
+    position: relative;
+    padding: 100px 0px;
+    background-color: var(--dark-bg);
+
+    .choose-head {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+
+      h6 {
+        color: var(--main-color);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-size: 15px;
+      }
+
+      h3 {
+        font-size: 30px;
+        font-weight: 950;
+      }
+
+      p {
+        line-height: 26px;
+        margin: 20px 0px 60px 0;
+      }
+
+       @media screen and (max-width: 900px) {
+        max-width: 630px;
+        margin: 0 auto;
+      }
+    }
+    .feature-icon {
+      font-size: 50px;
+      color: var(--main-color);
+    }
+    .custom-pag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+
+      @media screen and (max-width: 1200px) {
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      @media screen and (max-width: 900px) {
+        justify-content: center;
+        margin-top: 20px;
+      }
+      @media screen and (max-width: 600px) {
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 0px;
+      }
+
+      > span {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        margin: 0 3px !important;
+        background-color: var(--gray-txt);
+
+        &.swiper-pagination-bullet-active {
+          width: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 2;
+
+          &::before {
+            content: "";
+            width: 37px !important;
+            height: 10px;
+            background: var(--main-color) !important;
+            border-top-right-radius: 10px !important;
+            border-bottom-right-radius: 10px !important;
+            border-top-left-radius: 10px !important;
+            border-bottom-left-radius: 10px !important;
+
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+}
+
+body.light-mode {
+  .why-chose {
+    position: relative;
+    background-color: var(--gray-bg);
+    padding: 100px 0px;
+
+    .choose-head {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+
+      h6 {
+        color: var(--main-color);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-size: 15px;
+      }
+
+      h3 {
+        font-size: 30px;
+        font-weight: 950;
+      }
+
+      p {
+        line-height: 26px;
+        margin: 20px 0px 60px 0;
+      }
+
+      @media screen and (max-width: 900px) {
+        max-width: 630px;
+        margin: 0 auto;
+      }
+    }
+
+    .feature-icon {
+      font-size: 50px;
+      color: var(--main-color);
+    }
+
+    .custom-pag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+
+      @media screen and (max-width: 1200px) {
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      @media screen and (max-width: 900px) {
+        justify-content: center;
+        margin-top: 20px;
+      }
+      @media screen and (max-width: 600px) {
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 0px;
+      }
+
+      > span {
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        margin: 0 3px !important;
+        background-color: var(--gray-txt);
+
+        &.swiper-pagination-bullet-active {
+          width: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 2;
+
+          &::before {
+            content: "";
+            width: 37px !important;
+            height: 10px;
+            background: var(--main-color) !important;
+            border-top-right-radius: 10px !important;
+            border-bottom-right-radius: 10px !important;
+            border-top-left-radius: 10px !important;
+            border-bottom-left-radius: 10px !important;
+
+            z-index: 2;
+          }
+        }
+      }
+    }
+  }
+}
