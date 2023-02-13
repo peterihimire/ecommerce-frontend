@@ -10,27 +10,23 @@ body.dark-mode {
 
     // 2.5K
     @media (max-width: 2560px) {
-      margin-left: 400px;
+      margin-left: 550px;
     }
     // FULL HD
     @media (max-width: 1920px) {
-      margin-left: 200px;
+      margin-left: 330px;
     }
     // 13 RETINA MAC
     @media screen and (max-width: 1680px) {
-      margin-left: 120px;
+      margin-left: 250px;
     }
     // WINDOWS
     @media screen and (max-width: 1366px) {
-      margin-left: 200px;
+      margin-left: 330px;
     }
     // HD
     @media screen and (max-width: 1280px) {
-      margin-left: 200px;
-    }
-
-    @media (width: 1680px) and (height: 1050px) {
-      margin-left: 100px;
+      margin-left: 330px;
     }
 
     @media (max-width: 1264px) {
@@ -113,183 +109,6 @@ body.dark-mode {
           color: var(--main-color) !important;
           font-weight: 700;
         }
-
-        &.hasDrop {
-          position: relative;
-          margin-bottom: 25px;
-
-          @media (min-width: 1276px) {
-            margin-bottom: 0px;
-
-            &:hover {
-              .dropdownMenu {
-                opacity: 1;
-                visibility: visible;
-                pointer-events: all;
-                transform: none;
-              }
-            }
-          }
-
-          .hasDropBtn {
-            background: transparent;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            font-size: 15px;
-            color: var(--white);
-
-            @media (max-width: 1275px) {
-              justify-content: space-between;
-              width: var(--full);
-            }
-            @media screen and (max-width: 900px) {
-              font-size: 16px;
-              color: var(--white);
-            }
-            @media screen and (max-width: 700px) {
-              font-size: 16px;
-
-              color: var(--white);
-            }
-
-            &:hover {
-              color: var(--main-color);
-              font-size: 15px;
-
-              span {
-                color: var(--main-color);
-              }
-
-              @media screen and (max-width: 900px) {
-                font-size: 16px;
-              }
-            }
-
-            > span {
-              margin-right: 7px;
-              font-size: 14px;
-              color: var(--white);
-              font-family: NotoSans-Medium, sans-serif;
-
-              @media screen and (max-width: 900px) {
-                font-size: 16px;
-                color: var(--white);
-              }
-            }
-          }
-
-          .dropdownMenu {
-            position: absolute;
-            // width: auto;
-            width: 150px;
-            z-index: 21;
-            padding-top: 2px;
-            top: 100%;
-            left: -20px;
-            cursor: default;
-            visibility: hidden;
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(15px);
-            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-            transition-delay: 0.1s;
-
-            @media (min-width: 1276px) and (max-width: 1640px) {
-              &.dropResources {
-                // left: -475px;
-              }
-            }
-
-            @media (max-width: 1275px) {
-              position: relative;
-              width: var(--full);
-              padding-top: 0px;
-              margin-top: 16px;
-              max-height: 0;
-              overflow: hidden;
-              z-index: 0;
-              top: 0;
-              left: 0;
-              visibility: visible;
-              opacity: 1;
-              pointer-events: visible;
-              transform: none;
-              transition: all 0.4s ease-in-out;
-
-              &.show {
-                max-height: 300px;
-              }
-            }
-
-            .dropdownContainer {
-              width: auto;
-              display: flex;
-              background: #2a2a2a;
-              // background-color: var(--black);
-              // background: var(--gray-txt);
-              border-radius: 2px;
-              box-shadow: var(--box-shadow-dark);
-              padding: 10px 0px;
-
-              @media (max-width: 1275px) {
-                flex-direction: column;
-                box-shadow: none;
-                border-radius: 0;
-              }
-            }
-
-            .dropdownWrapper {
-              display: grid;
-              grid-template-columns: repeat(1, 150px);
-              // gap: 10px 0px;
-
-              @media (max-width: 1275px) {
-                display: block;
-                width: var(--full);
-              }
-
-              > li {
-                height: var(--full);
-                border-top: rgba(220, 220, 220, 0.053) solid 1px;
-
-                &:last-of-type {
-                  border-bottom: rgba(220, 220, 220, 0.053) solid 1px;
-                }
-
-                @media (max-width: 1275px) {
-                  height: auto;
-                  width: var(--full);
-                }
-
-                > .forDrop {
-                  display: flex;
-                  white-space: pre-wrap;
-                  color: var(--txt-dark);
-                  height: var(--full);
-                  padding: 10px 20px;
-                  font-size: 14px;
-
-                  @media (max-width: 1275px) {
-                    width: var(--full);
-                    padding: 15px 16px;
-                  }
-
-                  @media (max-width: 905px) {
-                    font-size: 16px;
-                  }
-
-                  &:hover {
-                    background: opacify($color: #acaaaa, $amount: 1);
-                    color: var(--main-color);
-                    padding: 10px 20px;
-                    border-radius: 0px;
-                  }
-                }
-              }
-            }
-          }
-        }
       }
 
       .toggle-theme-dark {
@@ -302,6 +121,183 @@ body.dark-mode {
       align-items: center;
       justify-content: center;
       height: 100%;
+
+      .hasDrop {
+        position: relative;
+        margin-bottom: 25px;
+
+        @media (min-width: 1276px) {
+          margin-bottom: 0px;
+
+          &:hover {
+            .dropdownMenu {
+              opacity: 1;
+              visibility: visible;
+              pointer-events: all;
+              transform: none;
+            }
+          }
+        }
+
+        .hasDropBtn {
+          background: transparent;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+          // color: var(--white);
+
+          @media (max-width: 1275px) {
+            justify-content: space-between;
+            width: var(--full);
+          }
+          @media screen and (max-width: 900px) {
+            font-size: 16px;
+            color: var(--white);
+          }
+          @media screen and (max-width: 700px) {
+            font-size: 16px;
+
+            color: var(--white);
+          }
+
+          &:hover {
+            color: var(--main-color);
+            font-size: 15px;
+
+            span {
+              color: var(--main-color);
+            }
+
+            @media screen and (max-width: 900px) {
+              font-size: 16px;
+            }
+          }
+
+          > span {
+            margin-right: 7px;
+            font-size: 14px;
+            color: var(--white);
+            font-family: NotoSans-Medium, sans-serif;
+
+            @media screen and (max-width: 900px) {
+              font-size: 16px;
+              color: var(--white);
+            }
+          }
+        }
+
+        .dropdownMenu {
+          position: absolute;
+          // width: auto;
+          width: 150px;
+          z-index: 21;
+          padding-top: 2px;
+          top: 100%;
+          left: -20px;
+          cursor: default;
+          visibility: hidden;
+          opacity: 0;
+          pointer-events: none;
+          transform: translateY(15px);
+          transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+          transition-delay: 0.1s;
+
+          @media (min-width: 1276px) and (max-width: 1640px) {
+            &.dropResources {
+              // left: -475px;
+            }
+          }
+
+          @media (max-width: 1275px) {
+            position: relative;
+            width: var(--full);
+            padding-top: 0px;
+            margin-top: 16px;
+            max-height: 0;
+            overflow: hidden;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            visibility: visible;
+            opacity: 1;
+            pointer-events: visible;
+            transform: none;
+            transition: all 0.4s ease-in-out;
+
+            &.show {
+              max-height: 300px;
+            }
+          }
+
+          .dropdownContainer {
+            width: auto;
+            display: flex;
+            background: #2a2a2a;
+            // background-color: var(--black);
+            // background: var(--gray-txt);
+            border-radius: 2px;
+            box-shadow: var(--box-shadow-dark);
+            padding: 10px 0px;
+
+            @media (max-width: 1275px) {
+              flex-direction: column;
+              box-shadow: none;
+              border-radius: 0;
+            }
+          }
+
+          .dropdownWrapper {
+            display: grid;
+            grid-template-columns: repeat(1, 150px);
+            // gap: 10px 0px;
+
+            @media (max-width: 1275px) {
+              display: block;
+              width: var(--full);
+            }
+
+            > li {
+              height: var(--full);
+              border-top: rgba(220, 220, 220, 0.053) solid 1px;
+
+              &:last-of-type {
+                border-bottom: rgba(220, 220, 220, 0.053) solid 1px;
+              }
+
+              @media (max-width: 1275px) {
+                height: auto;
+                width: var(--full);
+              }
+
+              > .forDrop {
+                display: flex;
+                white-space: pre-wrap;
+                color: var(--txt-dark);
+                height: var(--full);
+                padding: 10px 20px;
+                font-size: 14px;
+
+                @media (max-width: 1275px) {
+                  width: var(--full);
+                  padding: 15px 16px;
+                }
+
+                @media (max-width: 905px) {
+                  font-size: 16px;
+                }
+
+                &:hover {
+                  background: opacify($color: #acaaaa, $amount: 1);
+                  color: var(--main-color);
+                  padding: 10px 20px;
+                  border-radius: 0px;
+                }
+              }
+            }
+          }
+        }
+      }
 
       .cart-count {
         position: relative;
@@ -381,23 +377,23 @@ body.light-mode {
 
     // 2.5K
     @media (max-width: 2560px) {
-      margin-left: 400px;
+      margin-left: 550px;
     }
     // FULL HD
     @media (max-width: 1920px) {
-      margin-left: 200px;
+      margin-left: 330px;
     }
     // 13 RETINA MAC
     @media screen and (max-width: 1680px) {
-      margin-left: 120px;
+      margin-left: 250px;
     }
     // WINDOWS
     @media screen and (max-width: 1366px) {
-      margin-left: 200px;
+      margin-left: 330px;
     }
     // HD
     @media screen and (max-width: 1280px) {
-      margin-left: 200px;
+      margin-left: 330px;
     }
 
     @media (max-width: 1264px) {
@@ -672,6 +668,185 @@ body.light-mode {
       align-items: center;
       justify-content: center;
       height: 100%;
+
+      .hasDrop {
+        position: relative;
+        margin-bottom: 25px;
+
+        @media (min-width: 1276px) {
+          margin-bottom: 0px;
+
+          &:hover {
+            .dropdownMenu {
+              opacity: 1;
+              visibility: visible;
+              pointer-events: all;
+              transform: none;
+            }
+          }
+        }
+
+        .hasDropBtn {
+          background: transparent;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+          color: var(--black);
+          // font-family: Proxima-Medium;
+
+          @media (max-width: 1275px) {
+            justify-content: space-between;
+            width: var(--full);
+          }
+          @media screen and (max-width: 900px) {
+            color: var(--black);
+            // font-family: Proxima-Regular;
+          }
+          @media screen and (max-width: 700px) {
+            color: var(--black);
+            // font-family: Proxima-Regular;
+          }
+
+          &:hover {
+            color: var(--main-color);
+            font-size: 15px;
+
+            span {
+              color: var(--main-color);
+            }
+
+            @media screen and (max-width: 900px) {
+              font-size: 16px;
+            }
+          }
+
+          > span {
+            margin-right: 7px;
+            font-size: 14px;
+            color: var(--black);
+            font-family: NotoSans-Medium, sans-serif;
+
+            @media (max-width: 905px) {
+              font-size: 16px;
+            }
+          }
+        }
+
+        .dropdownMenu {
+          position: absolute;
+          // width: auto;
+          width: 150px;
+          z-index: 21;
+          padding-top: 2px;
+          top: 100%;
+          left: -20px;
+          cursor: default;
+          visibility: hidden;
+          opacity: 0;
+          pointer-events: none;
+          transform: translateY(15px);
+          transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+          transition-delay: 0.1s;
+
+          @media (min-width: 1276px) and (max-width: 1640px) {
+            &.dropResources {
+              // left: -475px;
+            }
+          }
+
+          @media (max-width: 1275px) {
+            position: relative;
+            width: var(--full);
+            padding-top: 0px;
+            margin-top: 16px;
+            max-height: 0;
+            overflow: hidden;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            visibility: visible;
+            opacity: 1;
+            pointer-events: visible;
+            transform: none;
+            transition: all 0.4s ease-in-out;
+
+            &.show {
+              max-height: 300px;
+            }
+          }
+
+          .dropdownContainer {
+            width: auto;
+            display: flex;
+            background-color: var(--white);
+            border-radius: 2px;
+            box-shadow: var(--box-shadow);
+            padding: 10px 0px;
+
+            @media (max-width: 1275px) {
+              flex-direction: column;
+              box-shadow: none;
+              border-radius: 0;
+              background-color: var(--gray-bg);
+            }
+          }
+
+          .dropdownWrapper {
+            display: grid;
+            grid-template-columns: repeat(1, 150px);
+            // gap: 10px 0px;
+
+            @media (max-width: 1275px) {
+              display: block;
+              width: var(--full);
+            }
+
+            > li {
+              height: var(--full);
+              border-top: rgba(220, 220, 220, 0.162) solid 1px;
+
+              &:last-of-type {
+                border-bottom: rgba(220, 220, 220, 0.162) solid 1px;
+              }
+
+              @media (max-width: 1275px) {
+                height: auto;
+                width: var(--full);
+              }
+
+              > .forDrop {
+                display: flex;
+                white-space: pre-wrap;
+                color: var(--text-primary);
+                height: var(--full);
+                padding: 10px 20px;
+                font-size: 14px;
+
+                @media (max-width: 1275px) {
+                  width: var(--full);
+                  padding: 15px 16px;
+                }
+
+                @media (max-width: 905px) {
+                  font-size: 16px;
+                }
+
+                &:hover {
+                  background: var(--gray-bg);
+                  color: var(--main-color);
+                  padding: 10px 20px;
+                  border-radius: 0px;
+
+                  @media (max-width: 905px) {
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
 
       .cart-count {
         position: relative;

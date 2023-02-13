@@ -4,7 +4,7 @@ import {
   ArrowDownward,
   DarkModeOutlined,
   Search,
-  ShoppingBagOutlined,
+  PersonOutline,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -64,7 +64,7 @@ const Nav = ({ isOpen }) => {
           </NavLink>
         </li>
 
-        <li>
+        {/* <li>
           <NavLink to="/login" activeclassname="active">
             Login
           </NavLink>
@@ -73,14 +73,51 @@ const Nav = ({ isOpen }) => {
           <NavLink to="/register" activeclassname="active">
             Register
           </NavLink>
-        </li>
+        </li> */}
       </ul>
       <div className={`nav-end`}>
+        <div className={`hasDrop`}>
+          <button
+            className={`hasDropBtn`}
+            onClick={() => {
+              openAbout(!about);
+            }}
+          >
+            {darkMode.value ? (
+              <PersonOutline className="toggle-theme-dark" />
+            ) : (
+              <PersonOutline className="toggle-theme-light" />
+            )}
+          </button>
+
+          <div className={`dropdownMenu dropResources ${about ? "show" : ""}`}>
+            <div className={`dropdownContainer`}>
+              <ul className={`dropdownWrapper`}>
+                <li>
+                  <NavLink className={`forDrop`} to="/about-us/who-we-are">
+                    Login
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink className={`forDrop`} to="/about-us/our-vision">
+                    Register
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <div className={`search-btn`}>
-          {darkMode.value ? (
+          {/* {darkMode.value ? (
             <FontAwesomeIcon icon={faSearch} className={``} />
           ) : (
             <FontAwesomeIcon icon={faSearch} className={``} />
+          )} */}
+
+          {darkMode.value ? (
+            <Search className="toggle-theme-dark" />
+          ) : (
+            <Search className="toggle-theme-light" />
           )}
         </div>
         <div className={`cart-count`}>

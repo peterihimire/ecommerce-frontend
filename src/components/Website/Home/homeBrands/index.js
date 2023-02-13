@@ -5,14 +5,14 @@ import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 
 import "./styles.scss";
 
-const HomeCategories = () => {
+const HomeBrands = () => {
   return (
-    <section className={`home-categories`}>
+    <section className={`home-brands`}>
       <div className="wrapper">
         <div className={`featured-head`}>
-          <h3>Categories</h3>
+          <h3>Shop by Brands</h3>
         </div>
-        <div className={`categories-wrapper`}>
+        <div className={`brands-wrapper`}>
           <div className={`category-item`}>
             <div className={`category-item-info`}>
               <h4>Men</h4>
@@ -31,22 +31,11 @@ const HomeCategories = () => {
               <button className="btn-block btn-small">Shop Now</button>
             </div>
           </div>
-          <div className={`category-item`}>
-            <div className={`category-item-info`}>
-              <h4>Unisex</h4>
-              <button className="btn-block btn-small">Shop Now</button>
-            </div>
-          </div>
-          <div className={`category-item`}>
-            <div className={`category-item-info`}>
-              <h4>hats</h4>
-              <button className="btn-block btn-small">Shop Now</button>
-            </div>
-          </div>
+     
         </div>
       </div>
     </section>
   );
 };
 
-export default HomeCategories;
+export default HomeBrands;

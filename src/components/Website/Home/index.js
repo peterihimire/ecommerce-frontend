@@ -1,8 +1,11 @@
 import React from "react";
 import HomeHero from "./hero";
-import WhyChoose from "./whyChoose";
+import FeaturedProduct from "./featuredProduct";
+import NewArrival from "./newArrivals";
 import HomeCategories from "./homeCategories";
-import Reviews from "./reviews";
+import HomeBrands from "./homeBrands";
+import NewsLetter from "./newsLetter";
+// import Reviews from "./reviews";
 import { Helmet } from "react-helmet";
 
 import "./styles.scss";
@@ -16,8 +19,11 @@ const HomePage = () => {
 
       <HomeHero />
       <HomeCategories />
-      <WhyChoose />
-      <Reviews />
+      <HomeBrands />
+      <FeaturedProduct />
+      <NewArrival />
+      {/* <Reviews /> */}
+      <NewsLetter />
     </div>
   );
 };
