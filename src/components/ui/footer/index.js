@@ -24,7 +24,7 @@ const Footer = () => {
         <div className={`first`}>
           <div className={`logo`}>
             <Link to="/">
-              Benk<span>ih</span>
+              BRID<span>GET</span>
               {/* <img src={logo} alt='' /> */}
             </Link>
           </div>

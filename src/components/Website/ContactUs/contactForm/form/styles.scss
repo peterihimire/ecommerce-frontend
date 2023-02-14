@@ -19,7 +19,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
-    row-gap: 8px;
+    row-gap: 0px;
     width: var(--full);
 
     @media (max-width: 700px) {
@@ -63,10 +63,13 @@
       }
     }
   }
-
+  .formGroup {
+    height: 90px;
+    margin-bottom: 8px;
+  }
   .textarea {
     height: 206.5px;
-    margin-top: 8px;
+    margin-bottom: 8px;
   }
 
   .forgot {

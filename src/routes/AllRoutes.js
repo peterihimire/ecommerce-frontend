@@ -10,7 +10,7 @@ import { ContactPage } from "../pages/contactUs";
 import { OurVisionPage } from "../pages/ourVision";
 import { WhoWeArePage } from "../pages/whoWeAre";
 
-import { ProcessPage } from "../pages/ourProcess";
+import { CollectionsPage } from "../pages/collectionsPage";
 // import { LoginPage } from "../pages/login";
 // import { AdminLogin } from "../pages/adminLogin";
 
@@ -40,10 +40,10 @@ const AllRoutes = () => {
 
         <Route element={<WebsiteLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="our-process" element={<ProcessPage />} />
+          <Route path="collections" element={<CollectionsPage />} />
           <Route path="contact-us" element={<ContactPage />} />
-          <Route path="about-us/who-we-are" element={<WhoWeArePage />} />
-          <Route path="about-us/our-vision" element={<OurVisionPage />} />
+          <Route path="about-us" element={<WhoWeArePage />} />
+          <Route path="connections" element={<OurVisionPage />} />
 
           <Route path="register" element={<HomePage />} />
           {/* <Route path="login" element={<LoginPage />} />
@@ -98,80 +98,3 @@ const AllRoutes = () => {
 
 export default AllRoutes;
 
-/* <Route
-          exact
-          path="/"
-          element={
-            <WebsiteLayout>
-              <HomePage />
-            </WebsiteLayout>
-          }
-        />
-        <Route
-          exact
-          path="/pricing"
-          element={
-            <WebsiteLayout>
-              <HomePage />
-            </WebsiteLayout>
-          }
-        />
-        <Route
-          exact
-          path="/contact-us"
-          element={
-            <WebsiteLayout>
-              <HomePage />
-            </WebsiteLayout>
-          }
-        />
-        <Route
-          exact
-          path="/register"
-          element={
-            <WebsiteLayout>
-              <HomePage />
-            </WebsiteLayout>
-          }
-        />
-        <Route
-          exact
-          path="/login"
-          element={
-            <WebsiteLayout>
-              <LoginPage />
-            </WebsiteLayout>
-          }
-        />
-        <Route
-          exact
-          path="/admin/login"
-          element={
-            <WebsiteLayout>
-              <AdminLogin />
-            </WebsiteLayout>
-          }
-        />
-        <Route
-          exact
-          path="/dashboard"
-          element={
-            <ProtectedRoutes>
-              <DashboardLayout>
-                <DashPage />
-              </DashboardLayout>
-            </ProtectedRoutes>
-          }
-        />
-        <Route
-          exact
-          path="/admin/dashboard"
-          element={
-            <ProtectedRoutes >
-              <DashboardLayout>
-                <AdminDash />
-              </DashboardLayout>
-            </ProtectedRoutes>
-          }
-        />
-        <Route path="*" element={<h2>error 404</h2>} /> */

@@ -25,7 +25,7 @@ const Input = ({
   return (
     <>
       {/* {labelText && <label htmlFor={id}>{labelText}</label>} */}
-      {labelText && (
+      {/* {labelText && (
         <div className="label-wrapper">
           <label htmlFor={id}>
             {labelText}
@@ -33,6 +33,23 @@ const Input = ({
           </label>
           <p>{optionalText}</p>
         </div>
+      )} */}
+
+      {labelText && (
+        <label htmlFor={id}>
+          {labelText}
+          {required && (
+            <span
+              // style={{
+              //   color: "#ff8662",
+              //   marginLeft: "3px",
+              //   verticalAlign: "middle",
+              // }}
+            >
+              *
+            </span>
+          )}
+        </label>
       )}
 
       {innerLabel && (

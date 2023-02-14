@@ -16,11 +16,11 @@ const Select = ({
           {labelText}{" "}
           {required && (
             <span
-              style={{
-                color: "#ff8662",
-                marginLeft: "3px",
-                verticalAlign: "middle",
-              }}
+              // style={{
+              //   color: "#ff8662",
+              //   marginLeft: "3px",
+              //   verticalAlign: "middle",
+              // }}
             >
               *
             </span>

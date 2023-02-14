@@ -244,30 +244,30 @@ img {
   display: block;
 }
 
-.label-wrapper {
-  display: flex;
-  justify-content: space-between;
+// .label-wrapper {
+//   display: flex;
+//   justify-content: space-between;
 
-  label {
-    display: block;
-    font-size: 15px;
-    margin-bottom: 4px;
-    color: var(--head-txt);
-    font-family: NotoSans-Medium, sans-serif;
+label {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: var(--head-txt);
+  font-family: NotoSans-Medium, sans-serif;
 
-    span {
-      color: var(--red);
-      margin-left: 5px;
-    }
-  }
-
-  p {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
-    color: #74808c;
+  span {
+    color: var(--red);
+    margin-left: 5px;
   }
 }
+
+// p {
+//   font-weight: 400;
+//   font-size: 12px;
+//   line-height: 18px;
+//   color: #74808c;
+// }
+// }
 
 body.dark-mode {
   input:not([type="radio"]),
@@ -511,58 +511,117 @@ body.light-mode {
   cursor: not-allowed;
 }
 
-.select-wrapper {
-  width: 100%;
-  position: relative;
-  height: 50px;
-  max-width: 100%;
+body.dark-mode {
+  .select-wrapper {
+    width: 100%;
+    position: relative;
+    height: 50px;
+    max-width: 100%;
 
-  select {
-    border: 1.5px solid #adb7be;
-    color: #adb7be !important;
-  }
+    select {
+      // border: 1px solid #6f6e6e !important;
+      // color: var(--txt-dark) !important;
+      padding: 12px 18px 12px 18px !important;
+    }
 
-  label {
-    position: absolute !important;
-    top: -12px !important;
-    left: 10px !important;
-    margin-bottom: 0px !important;
-    // font-size: 14px;
-    line-height: 16px;
-    color: #343434;
-    background-color: var(--white);
-    padding: 5px;
-
+    // label {
+    //   position: absolute !important;
+    //   top: -12px !important;
+    //   left: 10px !important;
+    //   margin-bottom: 0px !important;
+    //   font-size: 14px;
+    //   line-height: 16px;
+    //   color: #343434;
+    //   background-color: var(--white);
+    //   padding: 5px;
     //   position: absolute;
-    // right: 16px;
-    // top: 50%;
-    // transform: translateY(-50%);
-    font-size: 18px;
-    // margin-bottom: 0px;
-  }
+    //   right: 16px;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   font-size: 18px;
+    //   margin-bottom: 0px;
+    // }
 
-  &.sort {
+    &.sort {
+      &::after {
+        // background: url("/images/sortBtn.svg") no-repeat !important;
+        background-size: contain !important;
+        width: 12px;
+        height: 18px;
+        right: 25px;
+      }
+    }
+
     &::after {
-      // background: url("/images/sortBtn.svg") no-repeat !important;
-      background-size: contain !important;
-      width: 12px;
-      height: 18px;
-      right: 25px;
+      content: "";
+      width: 10px;
+      height: 6px;
+      background: url("/assets/images/chevron-down.svg") no-repeat center;
+      background-size: cover;
+      position: absolute;
+      right: 20px;
+      top: 60%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      display: block;
     }
   }
+}
 
-  &::after {
-    content: "";
-    width: 10px;
-    height: 6px;
-    background: url("/assets/images/chevron-down.svg") no-repeat center;
-    background-size: cover;
-    position: absolute;
-    right: 20px;
-    top: 60%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    display: block;
+body.light-mode {
+  .select-wrapper {
+    width: 100%;
+    position: relative;
+    height: 50px;
+    max-width: 100%;
+
+    select {
+      // border: 1px solid #dadada !important;
+      // color: var(--txt-light) !important;
+      padding: 12px 18px 12px 18px !important;
+    }
+
+    // label {
+    //   position: absolute !important;
+    //   top: -12px !important;
+    //   left: 10px !important;
+    //   margin-bottom: 0px !important;
+    //   font-size: 14px;
+    //   line-height: 16px;
+    //   color: #343434;
+    //   background-color: var(--white);
+    //   padding: 5px;
+    //   position: absolute;
+    //   right: 16px;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   font-size: 18px;
+    //   margin-bottom: 0px;
+    // }
+
+    &.sort {
+      &::after {
+        // background: url("/images/sortBtn.svg") no-repeat !important;
+        background-size: contain !important;
+        width: 12px;
+        height: 18px;
+        right: 25px;
+      }
+    }
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 6px;
+      background: url("/assets/images/chevron-down-light.svg") no-repeat center;
+      background-size: cover;
+      position: absolute;
+      right: 20px;
+      top: 60%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      display: block;
+    }
   }
 }
 

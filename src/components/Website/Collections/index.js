@@ -1,7 +1,7 @@
 import React from "react";
-import SmallHero from "../../ui/smallHero";
+// import SmallHero from "../../ui/smallHero";
 import WhyChoose from "./whyChoose";
-import OurProcess from "./ourProcess";
+import OurProcess from "./collectionsList";
 import MapTalent from "./mapTalent";
 import { Helmet } from "react-helmet";
 
@@ -13,10 +13,10 @@ const ProcessPage = () => {
       </Helmet>
 
      
-      <SmallHero title={`Our Process`} />
+      {/* <SmallHero title={`Our Process`} /> */}
       <OurProcess />
-      <WhyChoose />
-      <MapTalent />
+      {/* <WhyChoose /> */}
+      {/* <MapTalent /> */}
     
     </div>
   );

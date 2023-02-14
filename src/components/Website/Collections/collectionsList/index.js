@@ -1,5 +1,5 @@
 import React from "react";
-import ProcessCard from "../../../ui/processCard";
+import ProductCard from "../../../ui/productCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeadphones } from "@fortawesome/free-solid-svg-icons";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
@@ -10,7 +10,7 @@ import { faAddressBook } from "@fortawesome/free-regular-svg-icons";
 
 import "./styles.scss";
 
-const OurProcess = () => {
+const CollectionsList = () => {
   const features = [
     {
       id: "01",
@@ -56,16 +56,27 @@ const OurProcess = () => {
     },
   ];
   return (
-    <section className={`ourProcess`}>
+    <section className={`collections-list`}>
       <div className="wrapper">
-        <div className={`container`}>
+        <div>
+          <h2>Burger Peanuts</h2>
+        </div>
+        <div className={`collections-filter`}>
+          <div>
+            <h5>Filter Product:</h5>
+          </div>
+          <div>
+            <h5>Filter Product:</h5>
+          </div>
+        </div>
+        <div className={`grid-container`}>
           {features.map((feature, index) => {
             return (
-              <ProcessCard
-                title={feature.title}
-                content={feature.exerpt}
-                id={feature.id}
-                icon={feature.icon}
+              <ProductCard
+              // title={feature.title}
+              // content={feature.exerpt}
+              // id={feature.id}
+              // icon={feature.icon}
               />
             );
           })}
@@ -75,4 +86,4 @@ const OurProcess = () => {
   );
 };
 
-export default OurProcess;
+export default CollectionsList;

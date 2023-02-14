@@ -1,11 +1,11 @@
-.ourProcess {
+.collections-list {
   position: relative;
   padding: 100px 0px;
 
-  .container {
+  .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px 32px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
 
     @media (max-width: 1200px) {
       margin-left: 0px;

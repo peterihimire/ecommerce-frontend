@@ -81,19 +81,16 @@ body.dark-mode {
         .logo {
           width: 200px;
           height: fit-content;
-          margin-bottom: 7px;
 
-          @media (max-width: 1264px) {
-          }
           img {
             width: 45px;
             height: 45px;
           }
           > a {
-            background: linear-gradient(to right, #7b33c8, #2568ef);
+            width: 102px;
+            background: linear-gradient(to right, #ef8a25, #c833af);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: bolder;
             font-size: 28px;
             font-weight: 300;
 
@@ -402,22 +399,45 @@ body.light-mode {
           text-align: center;
         }
 
+        // .logo {
+        //   width: 200px;
+        //   height: fit-content;
+        //   margin-bottom: 7px;
+
+        //   @media (max-width: 1264px) {
+        //   }
+        //   img {
+        //     width: 45px;
+        //     height: 45px;
+        //   }
+        //   > a {
+        //     background: linear-gradient(to right, #7b33c8, #2568ef);
+        //     -webkit-background-clip: text;
+        //     -webkit-text-fill-color: transparent;
+        //     font-weight: bolder;
+        //     font-size: 28px;
+        //     font-weight: 300;
+
+        //     span {
+        //       font-size: 28px !important;
+        //       font-weight: 900;
+        //     }
+        //   }
+        // }
+
         .logo {
           width: 200px;
           height: fit-content;
-          margin-bottom: 7px;
 
-          @media (max-width: 1264px) {
-          }
           img {
             width: 45px;
             height: 45px;
           }
           > a {
-            background: linear-gradient(to right, #7b33c8, #2568ef);
+            width: 102px;
+            background: linear-gradient(to right, #ef8a25, #c833af);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: bolder;
             font-size: 28px;
             font-weight: 300;
 

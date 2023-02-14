@@ -109,6 +109,8 @@ body.light-mode {
         height: 300px;
         background: var(--gray-bg);
         border-radius: var(--radius);
+    border: 1px solid #e7e9eb;
+
 
         .category-item-info {
           text-transform: uppercase;

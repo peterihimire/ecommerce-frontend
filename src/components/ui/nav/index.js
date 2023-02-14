@@ -49,17 +49,17 @@ const Nav = ({ isOpen }) => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/blog" activeclassname="active">
+          <NavLink to="/collections" activeclassname="active">
             Collections
           </NavLink>
         </li>
         <li>
-          <NavLink to="/our-process" activeclassname="active">
+          <NavLink to="/about" activeclassname="active">
             About
           </NavLink>
         </li>
         <li>
-          <NavLink to="/contact-us" activeclassname="active">
+          <NavLink to="/contact" activeclassname="active">
             Contact
           </NavLink>
         </li>
@@ -94,12 +94,12 @@ const Nav = ({ isOpen }) => {
             <div className={`dropdownContainer`}>
               <ul className={`dropdownWrapper`}>
                 <li>
-                  <NavLink className={`forDrop`} to="/about-us/who-we-are">
+                  <NavLink className={`forDrop`} to="/login">
                     Login
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className={`forDrop`} to="/about-us/our-vision">
+                  <NavLink className={`forDrop`} to="/register">
                     Register
                   </NavLink>
                 </li>

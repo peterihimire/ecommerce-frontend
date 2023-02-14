@@ -68,15 +68,22 @@ const Form = () => {
 
   const formik = useFormik({
     initialValues: {
+      firstname: "",
+      lastname: "",
+      phone: "",
       email: "",
-      password: "",
+      country: "",
+      message: "",
     },
 
     validationSchema: Yup.object({
       email: Yup.string()
         .email("Invalid email address")
         .required("Email Required *"),
-      password: Yup.string().required("Password Required *"),
+      firstname: Yup.string().required("Firstname Required *"),
+      lastname: Yup.string().required("Lastname Required *"),
+      phone: Yup.string().required("Phone Required *"),
+      message: Yup.string().required("Message Required *"),
     }),
 
     onSubmit: async (values) => {
@@ -152,7 +159,7 @@ const Form = () => {
               type="text"
               name="firstname"
               id="firstname"
-              // required
+              required
               placeholder="First Name"
               // value={loginForm.email}
               // onChange={(e) => handleFormChange(e.target)}
@@ -175,12 +182,12 @@ const Form = () => {
               type="text"
               name="lastname"
               id="lastname"
-              // required
-              placeholder="Password"
+              required
+              placeholder="Last Name"
               // value={loginForm.password}
               // onChange={(e) => handleFormChange(e.target)}
-              password
-              reveal={() => toggleVisibility()}
+              // password
+              // reveal={() => toggleVisibility()}
               // passIcon={!visible ? <Visibility /> : <VisibilityOff />}
               value={formik.values.lastname}
               onBlur={formik.handleBlur}
@@ -200,7 +207,7 @@ const Form = () => {
               type="email"
               name="email"
               id="email"
-              // required
+              required
               placeholder="Email"
               // value={loginForm.email}
               // onChange={(e) => handleFormChange(e.target)}
@@ -236,8 +243,8 @@ const Form = () => {
               inputProps={{ id: "phone", name: "phone_number" }}
               containerClass="phone-input-wrapper"
             />
-            {formik.touched.message && formik.errors.message ? (
-              <p className="error-msg">{formik.errors.message}</p>
+            {formik.touched.phone && formik.errors.phone ? (
+              <p className="error-msg">{formik.errors.phone}</p>
             ) : null}
           </div>
         </div>
@@ -256,12 +263,15 @@ const Form = () => {
             <option value="gh">Ghana</option>
             <option value="sa">South Africa</option>
           </Select>
+          {formik.touched.country && formik.errors.country ? (
+            <p className="error-msg">{formik.errors.country}</p>
+          ) : null}
         </div>
         <div className={`textarea`}>
           <Textarea
             labelText="Message"
             id="message"
-            // required
+            required
             name="message"
             placeholder="Type your message..."
             // iconSrc={textPen}

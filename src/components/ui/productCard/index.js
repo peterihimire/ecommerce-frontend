@@ -35,20 +35,20 @@ const ProductCard = ({ id, image, title, content, icon }) => {
       </div>
       <ul className={`product-actions`}>
         <li className={`product-act`}>
-          <Link>
+          {/* <Link> */}
             <ShoppingCartOutlined className={`shop-icon`} />
-          </Link>
+          {/* </Link> */}
         </li>
         <li className={`product-act`}>
-          <Link>
+          {/* <Link> */}
             {/* <FontAwesomeIcon icon={faSearch} /> */}
             <Search className={`shop-icon`} />
-          </Link>
+          {/* </Link> */}
         </li>
         <li className={`product-act`}>
-          <Link>
+          {/* <Link> */}
             <FavoriteBorderOutlined className={`shop-icon`} />
-          </Link>
+          {/* </Link> */}
         </li>
       </ul>
     </div>
