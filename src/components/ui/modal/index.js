@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+
 import styles from "./styles.module.scss";
-import { CloseOutlined } from "@ant-design/icons";
+// import { CloseOutlined } from "@ant-design/icons";
 
 const Modal = ({ children, click, header, bodyClass, ...props }) => {
   return ReactDOM.createPortal(
@@ -16,14 +19,14 @@ const Modal = ({ children, click, header, bodyClass, ...props }) => {
         <div className={styles.cancel}>
           <button onClick={click}>
             {/* <CloseOutlined /> */}
-            <img src="/images/Close.svg" alt="" />
+            <FontAwesomeIcon icon={faXmark} />
           </button>
         </div>
 
         {children}
       </div>
     </div>,
-    document.body,
+    document.body
   );
 };
 
