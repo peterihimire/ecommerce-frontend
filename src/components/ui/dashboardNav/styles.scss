@@ -1,18 +1,11 @@
 // @import "../../../styles/main.scss";
 body.dark-mode {
   .navSide {
-    // @include themify($themes) {
     height: 100%;
     display: flex;
     position: fixed;
-    // position: relative;
     transition: left 0.4s ease-in-out;
-    // background: var(--dashBlue);
-    // background: #004ef0;
     background: var(--black);
-    // background: themed("dashSideDrawer");
-    // background: var(--white);
-    // background: themed("bg");
     display: initial;
     justify-content: stretch;
     align-items: stretch;

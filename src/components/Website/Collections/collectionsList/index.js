@@ -16,12 +16,14 @@ import product11 from "../../../../assets/images/product11.png";
 import Select from "../../../ui/customSelect";
 import Modal from "../../../ui/modal";
 import CartNav from "../../../ui/cartNav";
+import Backdrop from "../../../ui/backdropCart";
 
 import "./styles.scss";
 
-const CollectionsList = ({ isOpen }) => {
+const CollectionsList = ({ isOpen, clicked }) => {
   const [showModal, setShowModal] = useState(false);
-  const [showNav, setShowNav] = useState(false);
+  const [open, setOpen] = useState(false);
+
   const products = [
     {
       id: "01",
@@ -137,7 +139,9 @@ const CollectionsList = ({ isOpen }) => {
 
   const openModalHandler = () => {
     console.log("Modal opened...");
-    setShowNav(true);
+    setShowModal(true);
+    document.documentElement.classList.add("_fixed");
+    document.body.classList.add("_fixed");
   };
 
   const closeModalHandler = () => {
@@ -147,12 +151,33 @@ const CollectionsList = ({ isOpen }) => {
 
   const addProductHandler = () => {
     console.log("Add handler...");
-    setShowNav(true);
+    setOpen(true);
+    document.documentElement.classList.add("_fixed");
+    document.body.classList.add("_fixed");
   };
 
   const likeProductHandler = () => {
     console.log("Like Handler...");
   };
+
+  // useEffect(() => {
+  //   if (!isOpen) {
+  //     // setDropOpen(false);
+  //   }
+  // }, [isOpen]);
+
+  // useEffect(
+  //   () => {
+  //     setOpen(false);
+
+  //     document.documentElement.classList.remove("_fixed");
+  //     document.body.classList.remove("_fixed");
+  //   },
+  //   [
+  //     // router.pathname
+  //   ]
+  // );
+
   return (
     <section className={`collections-list`}>
       <div className="wrapper">
@@ -238,14 +263,16 @@ const CollectionsList = ({ isOpen }) => {
           }
         </Modal>
       )}
-      {showNav && (
-        <CartNav
-          // bgChange={bgChange}
-          // isDrop={isDropOpen}
-          isOpen={isOpen}
-          // clicked={(payload) => dropHandler(payload)}
-        />
-      )}
+
+      <CartNav isOpen={open} />
+      <Backdrop
+        open={open}
+        clicked={() => {
+          setOpen(false);
+          document.documentElement.classList.remove("_fixed");
+          document.body.classList.remove("_fixed");
+        }}
+      />
     </section>
   );
 };

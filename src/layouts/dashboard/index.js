@@ -4,8 +4,9 @@ import Header from "../../components/UI/dashboardHeader";
 import Backdrop from "../../components/UI/backdrop";
 // import Footer from "../../components/ui/footer";
 import Sidebar from "../../components/UI/dashboardNav";
+import CartNav from "../../components/ui/cartNav";
 import DashboardHeader from "../../components/UI/dashboardMainHeader";
-import DashboardRightBar from '../../components/UI/dashboardRightBar'
+import DashboardRightBar from "../../components/UI/dashboardRightBar";
 import { Outlet } from "react-router-dom";
 
 // import { useRouter } from "next/router";
@@ -30,6 +31,7 @@ const DashboardLayout = () => {
   return (
     <div className={`layoutt`}>
       <Sidebar isOpen={open} />
+      <CartNav isOpen={open} />
       <Backdrop
         open={open}
         clicked={() => {
@@ -57,7 +59,6 @@ const DashboardLayout = () => {
           </div>
           <div className={`rightSide`}>
             <DashboardRightBar />
-
           </div>
         </div>
       </main>
