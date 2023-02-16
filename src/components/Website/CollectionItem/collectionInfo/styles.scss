@@ -1,0 +1,23 @@
+body.dark-mode {
+}
+
+body.light-mode {
+  .collection-info {
+    margin: 100px 0;
+    .collection-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+
+      .detail-img {
+        background-color: rgb(210, 210, 210);
+
+        img {
+          width: 100%;
+        }
+      }
+      .detail-txt {
+      }
+    }
+  }
+}

@@ -147,6 +147,8 @@ const CollectionsList = ({ isOpen, clicked }) => {
   const closeModalHandler = () => {
     console.log("Modal closed...");
     setShowModal(false);
+    document.documentElement.classList.remove("_fixed");
+    document.body.classList.remove("_fixed");
   };
 
   const addProductHandler = () => {
@@ -159,24 +161,6 @@ const CollectionsList = ({ isOpen, clicked }) => {
   const likeProductHandler = () => {
     console.log("Like Handler...");
   };
-
-  // useEffect(() => {
-  //   if (!isOpen) {
-  //     // setDropOpen(false);
-  //   }
-  // }, [isOpen]);
-
-  // useEffect(
-  //   () => {
-  //     setOpen(false);
-
-  //     document.documentElement.classList.remove("_fixed");
-  //     document.body.classList.remove("_fixed");
-  //   },
-  //   [
-  //     // router.pathname
-  //   ]
-  // );
 
   return (
     <section className={`collections-list`}>
@@ -264,7 +248,15 @@ const CollectionsList = ({ isOpen, clicked }) => {
         </Modal>
       )}
 
-      <CartNav isOpen={open} />
+      <CartNav
+        isOpen={open}
+        clicked={() => {
+          setOpen(false);
+
+          document.documentElement.classList.remove("_fixed");
+          document.body.classList.remove("_fixed");
+        }}
+      />
       <Backdrop
         open={open}
         clicked={() => {

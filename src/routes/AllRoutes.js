@@ -7,9 +7,9 @@ import WebsiteLayout from "../layouts/website";
 // import DashboardSettingsLayout from "../layouts/dashboardSettings";
 import { HomePage } from "../pages/home";
 import { ContactPage } from "../pages/contactUs";
-import { OurVisionPage } from "../pages/ourVision";
+// import { OurVisionPage } from "../pages/ourVision";
 import { WhoWeArePage } from "../pages/whoWeAre";
-
+import { CollectionItemPage } from "../pages/collectionItem";
 import { CollectionsPage } from "../pages/collectionsPage";
 // import { LoginPage } from "../pages/login";
 // import { AdminLogin } from "../pages/adminLogin";
@@ -43,7 +43,7 @@ const AllRoutes = () => {
           <Route path="collections" element={<CollectionsPage />} />
           <Route path="contact-us" element={<ContactPage />} />
           <Route path="about-us" element={<WhoWeArePage />} />
-          <Route path="connections" element={<OurVisionPage />} />
+          <Route path="collections/:pId" element={<CollectionItemPage />} />
 
           <Route path="register" element={<HomePage />} />
           {/* <Route path="login" element={<LoginPage />} />

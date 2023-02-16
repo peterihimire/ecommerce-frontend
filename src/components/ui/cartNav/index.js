@@ -4,7 +4,7 @@ import useDarkMode from "use-dark-mode";
 
 import "./styles.scss";
 
-const CartNav = ({ isOpen }) => {
+const CartNav = ({ isOpen, clicked }) => {
   const location = useLocation();
   console.log(location);
   console.log(location.pathname.split("/")[1]);
@@ -13,12 +13,15 @@ const CartNav = ({ isOpen }) => {
 
   const darkMode = useDarkMode(false);
   console.log(darkMode);
-
+  const [openSlider, setOpenSlider] = useState(isOpen);
+  console.log(openSlider);
   console.log(isOpen);
-
+  const closeCartHandler = (isOpen) => {
+    console.log("Clicked the x button", isOpen);
+  };
   return (
     <nav className={`cartNav ${isOpen ? "show" : ""}`}>
-      <div>X</div>
+      <button onClick={clicked}>X</button>
       <ul className="navLinks">
         <li>
           <NavLink to="/" activeclassname="active" exact="true">
