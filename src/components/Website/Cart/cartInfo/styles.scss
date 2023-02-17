@@ -1,0 +1,24 @@
+body.dark-mode {
+  .cart-info {
+    // position: relative;
+    padding: 100px 0px;
+    // background-color: #fff;
+
+    .title {
+      font-size: 22px;
+      text-transform: capitalize;
+    }
+  }
+}
+
+body.light-mode {
+  .cart-info {
+    // position: relative;
+    // background-color: var(--gray-bg);
+    padding: 100px 0px;
+    .title {
+      font-size: 22px;
+      text-transform: capitalize;
+    }
+  }
+}

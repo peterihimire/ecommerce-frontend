@@ -8,9 +8,9 @@ import WebsiteLayout from "../layouts/website";
 import { HomePage } from "../pages/home";
 import { ContactPage } from "../pages/contactUs";
 // import { OurVisionPage } from "../pages/ourVision";
-import { WhoWeArePage } from "../pages/whoWeAre";
+import { CartPage } from "../pages/cart";
 import { CollectionItemPage } from "../pages/collectionItem";
-import { CollectionsPage } from "../pages/collectionsPage";
+import { CollectionsPage } from "../pages/collections";
 // import { LoginPage } from "../pages/login";
 // import { AdminLogin } from "../pages/adminLogin";
 
@@ -42,7 +42,8 @@ const AllRoutes = () => {
           <Route index element={<HomePage />} />
           <Route path="collections" element={<CollectionsPage />} />
           <Route path="contact-us" element={<ContactPage />} />
-          <Route path="about-us" element={<WhoWeArePage />} />
+          <Route path="cart/:cId" element={<CartPage />} />
+          {/* <Route path="about-us" element={<WhoWeArePage />} /> */}
           <Route path="collections/:pId" element={<CollectionItemPage />} />
 
           <Route path="register" element={<HomePage />} />
