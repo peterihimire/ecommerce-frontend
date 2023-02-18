@@ -8,6 +8,27 @@ const CartInfo = () => {
         <div className={`title`}>
           <h2>My Cart</h2>
         </div>
+        <div className={`cart-header`}>
+          <button
+            className={`btn-secondary`}
+            style={{ height: "50px", width: "150px" }}
+          >
+            continue shopping
+          </button>
+          <div className={`cart-count`}>
+            <span>shopping cart(21)</span>
+            <span>my wishlist(7)</span>
+          </div>
+          <button
+            className={`btn-primary`}
+            style={{ height: "50px", width: "150px" }}
+          >
+            checkout now
+          </button>
+        </div>
+        <div>
+          
+        </div>
       </div>
     </section>
   );

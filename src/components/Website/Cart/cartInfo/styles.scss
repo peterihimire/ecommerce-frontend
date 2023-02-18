@@ -20,5 +20,24 @@ body.light-mode {
       font-size: 22px;
       text-transform: capitalize;
     }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .cart-count {
+        display: flex;
+        align-items: center;
+
+        span {
+          margin-right: 10px;
+
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
   }
 }
