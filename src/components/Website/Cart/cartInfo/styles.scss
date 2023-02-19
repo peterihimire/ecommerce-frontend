@@ -39,5 +39,17 @@ body.light-mode {
         }
       }
     }
+    .cart-grid {
+      display: grid;
+      grid-template-columns: 4fr 2fr;
+      gap: 0px 30px;
+
+      .cart-order {
+        background-color: aqua;
+      }
+      .cart-items{
+         background-color: red;
+      }
+    }
   }
 }

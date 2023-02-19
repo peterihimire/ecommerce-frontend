@@ -26,8 +26,9 @@ const CartInfo = () => {
             checkout now
           </button>
         </div>
-        <div>
-          
+        <div className={`cart-grid`}>
+          <div className={`cart-items`}>cart items</div>
+          <div className={`cart-order`}>order</div>
         </div>
       </div>
     </section>
