@@ -375,7 +375,8 @@ body.light-mode {
     padding: 50px 0 50px 0;
     position: relative;
     background: url(../../../../assets/images/css-bg.png);
-    background-color: var(--gray-bg);
+    // background-color: var(--gray-bg);
+    background-color: #fdfbef;
 
     @keyframes bounce {
       0% {
@@ -559,9 +560,7 @@ body.light-mode {
     padding: 50px 0 50px 0;
     position: relative;
     background: url(../../../../assets/images/css-bg.png);
-    background-color: var(--gray-bg);
-    // background-color: #e1e4e1;
-    // background-color: #cacbca;
+    background-color: #effae8;
 
     @keyframes bounce {
       0% {

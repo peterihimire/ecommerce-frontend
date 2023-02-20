@@ -8,6 +8,8 @@ body.dark-mode {
 
       .detail-img {
         background-color: rgb(15, 15, 15);
+        max-width: 500px;
+        max-height: 500px;
 
         img {
           width: 100%;
@@ -83,7 +85,6 @@ body.dark-mode {
   }
 }
 
-
 body.light-mode {
   .collection-info {
     margin: 100px 0;
@@ -94,6 +95,8 @@ body.light-mode {
 
       .detail-img {
         background-color: rgb(210, 210, 210);
+        max-width: 500px;
+        max-height: 500px;
 
         img {
           width: 100%;

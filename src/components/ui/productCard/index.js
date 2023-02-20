@@ -27,22 +27,31 @@ const ProductCard = ({
   }, []);
 
   return (
-    <div data-aos="zoom-in" className={`product-card`} key={id}>
-      <div className={`circle-div`}></div>
-      <div className={`product-div`}>
-        <img src={image} alt="" />
+    <div>
+      <div data-aos="zoom-in" className={`product-card`} key={id}>
+        <div className={`circle-div`}></div>
+        <div className={`product-div`}>
+          <img src={image} alt="" />
+        </div>
+        <ul className={`product-actions`}>
+          <li onClick={addProd} className={`product-act`}>
+            <ShoppingCartOutlined className={`shop-icon`} />
+          </li>
+          <li onClick={infoProd} className={`product-act`}>
+            <Search className={`shop-icon`} />
+          </li>
+          <li onClick={likeProd} className={`product-act`}>
+            <FavoriteBorderOutlined className={`shop-icon`} />
+          </li>
+        </ul>
+        {/* <div className={`title-price`}>
+        <h5>{title}</h5>
+        <h6>
+          ${price}
+          <span>${price}</span>
+        </h6>
+      </div> */}
       </div>
-      <ul className={`product-actions`}>
-        <li onClick={addProd} className={`product-act`}>
-          <ShoppingCartOutlined className={`shop-icon`} />
-        </li>
-        <li onClick={infoProd} className={`product-act`}>
-          <Search className={`shop-icon`} />
-        </li>
-        <li onClick={likeProd} className={`product-act`}>
-          <FavoriteBorderOutlined className={`shop-icon`} />
-        </li>
-      </ul>
       <div className={`title-price`}>
         <h5>{title}</h5>
         <h6>
