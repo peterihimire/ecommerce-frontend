@@ -44,11 +44,12 @@ body.dark-mode {
 
       .cart-body {
         height: 100%;
-        top: 101px;
+        // top: 101px;
 
         .cart-list {
-          overflow: scroll;
+          overflow: auto;
           height: 84%;
+
 
           .cart-item {
             padding: 20px;
@@ -154,10 +155,10 @@ body.light-mode {
 
       .cart-body {
         height: 100%;
-        top: 101px;
+        // top: 101px;
 
         .cart-list {
-          overflow: scroll;
+          overflow: auto;
           height: 84%;
 
           .cart-item {
