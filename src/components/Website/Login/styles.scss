@@ -11,13 +11,13 @@ body.dark-mode {
     .left {
       width: 50%;
       height: 100vh;
-      background: linear-gradient(
-          180deg,
-          rgba(34, 106, 255, 0.15) 0%,
-          rgba(5, 25, 65, 0.82) 46.35%,
-          rgba(0, 0, 0, 0.94) 100%
-        ),
-        url("/assets/images/image-BG.png") no-repeat;
+      // background: linear-gradient(
+      //     180deg,
+      //     rgba(34, 106, 255, 0.15) 0%,
+      //     rgba(5, 25, 65, 0.82) 46.35%,
+      //     rgba(0, 0, 0, 0.94) 100%
+      //   ),
+      //   url("/assets/images/cat1.webp") no-repeat;
       background-size: cover;
       background-position: center;
       color: var(--white);
@@ -116,13 +116,13 @@ body.light-mode {
     .left {
       width: 50%;
       height: 100vh;
-      background: linear-gradient(
-          180deg,
-          rgba(34, 106, 255, 0.15) 0%,
-          rgba(5, 25, 65, 0.82) 46.35%,
-          rgba(0, 0, 0, 0.94) 100%
-        ),
-        url("/assets/images/image-BG.png") no-repeat;
+      // background: linear-gradient(
+      //     180deg,
+      //     rgba(34, 106, 255, 0.15) 0%,
+      //     rgba(5, 25, 65, 0.82) 46.35%,
+      //     rgba(0, 0, 0, 0.94) 100%
+      //   ),
+      //   url("/assets/images/cat1.webp") no-repeat;
       background-size: cover;
       background-position: center;
       color: var(--white);

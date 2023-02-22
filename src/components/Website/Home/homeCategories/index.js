@@ -1,6 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Autoplay } from "swiper";
+import pix1 from "../../../../assets/images/cat1.webp";
+import pix2 from "../../../../assets/images/cat2.webp";
+import pix3 from "../../../../assets/images/cat3.webp";
 
 import "./styles.scss";
 
@@ -31,6 +34,7 @@ const HomeCategories = () => {
           >
             <SwiperSlide>
               <div className={`category-item`}>
+                <img src={pix1} alt="" />
                 <div className={`category-item-info`}>
                   <h4>Men</h4>
                   <button className="btn-block btn-small">Shop Now</button>
@@ -40,6 +44,7 @@ const HomeCategories = () => {
 
             <SwiperSlide>
               <div className={`category-item`}>
+                <img src={pix2} alt="" />
                 <div className={`category-item-info`}>
                   <h4>Men</h4>
                   <button className="btn-block btn-small">Shop Now</button>
@@ -49,6 +54,7 @@ const HomeCategories = () => {
 
             <SwiperSlide>
               <div className={`category-item`}>
+                <img src={pix3} alt="" />
                 <div className={`category-item-info`}>
                   <h4>Men</h4>
                   <button className="btn-block btn-small">Shop Now</button>
@@ -57,15 +63,7 @@ const HomeCategories = () => {
             </SwiperSlide>
             <SwiperSlide>
               <div className={`category-item`}>
-                <div className={`category-item-info`}>
-                  <h4>Men</h4>
-                  <button className="btn-block btn-small">Shop Now</button>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className={`category-item`}>
+                <img src={pix1} alt="" />
                 <div className={`category-item-info`}>
                   <h4>Men</h4>
                   <button className="btn-block btn-small">Shop Now</button>
@@ -75,6 +73,17 @@ const HomeCategories = () => {
 
             <SwiperSlide>
               <div className={`category-item`}>
+                <img src={pix2} alt="" />
+                <div className={`category-item-info`}>
+                  <h4>Men</h4>
+                  <button className="btn-block btn-small">Shop Now</button>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className={`category-item`}>
+                <img src={pix1} alt="" />
                 <div className={`category-item-info`}>
                   <h4>Men</h4>
                   <button className="btn-block btn-small">Shop Now</button>

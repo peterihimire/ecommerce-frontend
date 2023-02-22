@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Header from "../../components/UI/header";
-import Backdrop from "../../components/UI/backdrop";
+// import Header from "../../components/ui/header";
+import Backdrop from "../../components/ui/backdrop";
 import { useLocation } from "react-router-dom";
-import Footer from "../../components/UI/footer";
+// import Footer from "../../components/UI/footer";
 import { Outlet } from "react-router-dom";
 
 import "./styles.scss";
@@ -19,7 +19,7 @@ const AuthLayout = () => {
   }, [router.pathname]);
 
   return (
-    <div className="landing-layout">
+    <div className="auth-layout">
       <Backdrop
         open={open}
         clicked={() => {
@@ -30,7 +30,7 @@ const AuthLayout = () => {
         }}
       />
 
-      <Header
+      {/* <Header
         isOpen={open}
         clicked={() => {
           setOpen(!open);
@@ -38,7 +38,7 @@ const AuthLayout = () => {
           document.documentElement.classList.toggle("_fixed");
           document.body.classList.toggle("_fixed");
         }}
-      />
+      /> */}
 
       <main className="main">
         <Outlet />

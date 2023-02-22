@@ -62,7 +62,6 @@
 //   }
 // }
 
-
 body.dark-mode {
   .home-categories {
     padding: 100px 0;
@@ -104,6 +103,11 @@ body.dark-mode {
         background: var(--dark-bg);
         border-radius: var(--radius);
         border: 1px solid #5f6060;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
 
         .category-item-info {
           text-transform: uppercase;
@@ -166,6 +170,11 @@ body.light-mode {
         background: var(--gray-bg);
         border-radius: var(--radius);
         border: 1px solid #e7e9eb;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
 
         .category-item-info {
           text-transform: uppercase;

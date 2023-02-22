@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import WebsiteLayout from "../layouts/website";
-// import AuthLayout from "../layouts/auth";
+import AuthLayout from "../layouts/auth";
 // import DashboardLayout from "../layouts/dashboard";
 // import DashboardSettingsLayout from "../layouts/dashboardSettings";
 import { HomePage } from "../pages/home";
@@ -11,7 +11,7 @@ import { ContactPage } from "../pages/contactUs";
 import { CartPage } from "../pages/cart";
 import { CollectionItemPage } from "../pages/collectionItem";
 import { CollectionsPage } from "../pages/collections";
-// import { LoginPage } from "../pages/login";
+import { LoginPage } from "../pages/login";
 // import { AdminLogin } from "../pages/adminLogin";
 
 // import { DashPage } from "../pages/dashboard";
@@ -47,8 +47,13 @@ const AllRoutes = () => {
           <Route path="collections/:pId" element={<CollectionItemPage />} />
 
           <Route path="register" element={<HomePage />} />
-          {/* <Route path="login" element={<LoginPage />} />
-          <Route path="/admin/login" element={<AdminLogin />} /> */}
+          {/* <Route path="login" element={<LoginPage />} /> */}
+          {/* <Route path="/admin/login" element={<AdminLogin />} /> */}
+        </Route>
+
+        <Route element={<AuthLayout />}>
+          <Route path="login" element={<LoginPage />} />
+          {/* <Route path="/admin/login" element={<AdminLogin />} /> */}
         </Route>
 
         {/* <Route element={<DashboardLayout />}>
@@ -98,4 +103,3 @@ const AllRoutes = () => {
 };
 
 export default AllRoutes;
-

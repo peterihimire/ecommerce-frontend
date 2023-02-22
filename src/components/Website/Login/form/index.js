@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import styles from "./styles.module.scss";
-import Input from "../../../UI/customInput";
+import "./styles.scss";
+import Input from "../../../ui/customInput";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -135,14 +135,14 @@ const Form = () => {
   // };
 
   return (
-    <div className={styles.loginForm}>
+    <div className={`loginForm`}>
       <h2>Log into your Account</h2>
 
       <form
         onSubmit={formik.handleSubmit}
         // onSubmit={(e) => handleLogin(e)}
       >
-        <div className={styles.formGroup}>
+        <div className={`formGroup`}>
           <Input
             // labelText="What’s your Email?"
             type="email"
@@ -158,14 +158,14 @@ const Form = () => {
             onChange={formik.handleChange}
           />
           {formik.touched.email && formik.errors.email ? (
-            <p className={styles.errorStyle}>{formik.errors.email}</p>
+            <p className={`errorStyle`}>{formik.errors.email}</p>
           ) : null}
 
           {/* {formError.email && (
             <p className={styles.errorStyle}>{formError.email}</p>
           )} */}
         </div>
-        <div className={styles.formGroup}>
+        <div className={`formGroup`}>
           <Input
             // labelText="Create a Password"
             type={visible ? "text" : "password"}
@@ -183,20 +183,20 @@ const Form = () => {
             onChange={formik.handleChange}
           />
           {formik.touched.password && formik.errors.password ? (
-            <p className={styles.errorStyle}>{formik.errors.password}</p>
+            <p className={`errorStyle`}>{formik.errors.password}</p>
           ) : null}
           {/* {formError.password && (
             <p className={styles.errorStyle}>{formError.password}</p>
           )} */}
         </div>
-        <div className={styles.forgot}>
+        <div className={`forgot`}>
           {/* <Link href='/forgot-password'>
-            <a className={styles.linkStyle}>Forgot Password?</a>
+            <a className={`linkStyle`}>Forgot Password?</a>
           </Link> */}
         </div>
-        <div className={styles.btnWithError}>
-          {error && <p className={styles.errorStyle}>*{error}</p>}
-          <div className={styles.submitBtn}>
+        <div className={`btnWithError`}>
+          {error && <p className={`errorStyle`}>*{error}</p>}
+          <div className={`submitBtn`}>
             <button
               className="btn-primary btn-block"
               type="submit"
@@ -219,7 +219,7 @@ const Form = () => {
           </div>
         </div>
 
-        <div className={styles.register}>
+        <div className={`register`}>
           <span>Don't have an account? </span>
           {/* <Link href='/register'>
             <a className={styles.linkStyle}>Register</a>
