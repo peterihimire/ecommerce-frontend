@@ -24,7 +24,6 @@ const WebsiteLayout = () => {
         open={open}
         clicked={() => {
           setOpen(false);
-
           document.documentElement.classList.remove("_fixed");
           document.body.classList.remove("_fixed");
         }}
@@ -34,7 +33,6 @@ const WebsiteLayout = () => {
         isOpen={open}
         clicked={() => {
           setOpen(!open);
-
           document.documentElement.classList.toggle("_fixed");
           document.body.classList.toggle("_fixed");
         }}
