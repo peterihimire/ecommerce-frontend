@@ -4,9 +4,9 @@ import Form from "./form";
 // import Link from "next/link";
 // import Image from "next/image";
 
-const Login = () => {
+const Register = () => {
   return (
-    <div className={`wraper`}>
+    <div className={`register`}>
       <div className={`left`}>
         <div className={`inner`}>
           {/* <Link href='/'>
@@ -28,4 +28,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

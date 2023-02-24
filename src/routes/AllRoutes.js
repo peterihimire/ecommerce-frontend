@@ -3,19 +3,19 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import WebsiteLayout from "../layouts/website";
 import AuthLayout from "../layouts/auth";
-// import DashboardLayout from "../layouts/dashboard";
+import DashboardLayout from "../layouts/dashboard";
 // import DashboardSettingsLayout from "../layouts/dashboardSettings";
 import { HomePage } from "../pages/home";
 import { ContactPage } from "../pages/contactUs";
-// import { OurVisionPage } from "../pages/ourVision";
 import { CartPage } from "../pages/cart";
 import { CollectionItemPage } from "../pages/collectionItem";
 import { CollectionsPage } from "../pages/collections";
 import { LoginPage } from "../pages/login";
+import { RegisterPage } from "../pages/register";
 // import { AdminLogin } from "../pages/adminLogin";
 
-// import { DashPage } from "../pages/dashboard";
-// import { AdminDash } from "../pages/adminDash";
+import { DashPage } from "../pages/dashboard";
+import { AdminDash } from "../pages/adminDash";
 import ProtectedRoutes from "../hoc/ProtectedRoutes";
 
 const AllRoutes = () => {
@@ -33,30 +33,24 @@ const AllRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route element={<AuthLayout />}>
-          <Route path="login" element={<LoginPage />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
-        </Route> */}
-
+        {/* WEBSITE LAYOUT */}
         <Route element={<WebsiteLayout />}>
           <Route index element={<HomePage />} />
           <Route path="collections" element={<CollectionsPage />} />
-          <Route path="contact-us" element={<ContactPage />} />
+          <Route path="contact" element={<ContactPage />} />
           <Route path="cart/:cId" element={<CartPage />} />
-          {/* <Route path="about-us" element={<WhoWeArePage />} /> */}
           <Route path="collections/:pId" element={<CollectionItemPage />} />
-
-          <Route path="register" element={<HomePage />} />
-          {/* <Route path="login" element={<LoginPage />} /> */}
-          {/* <Route path="/admin/login" element={<AdminLogin />} /> */}
         </Route>
 
+        {/* LOGIN LAYOUT */}
         <Route element={<AuthLayout />}>
           <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
           {/* <Route path="/admin/login" element={<AdminLogin />} /> */}
         </Route>
 
-        {/* <Route element={<DashboardLayout />}>
+        {/* DASHBOARD LAYOUT */}
+        <Route element={<DashboardLayout />}>
           <Route
             path="/dashboard"
             element={
@@ -80,7 +74,7 @@ const AllRoutes = () => {
           />
         </Route>
 
-        <Route element={<DashboardSettingsLayout />}>
+        {/* <Route element={<DashboardSettingsLayout />}>
           <Route
             path="/admin/dashboard/setting"
             element={

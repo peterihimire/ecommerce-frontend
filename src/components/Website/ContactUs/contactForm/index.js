@@ -8,6 +8,9 @@ const ContactUs = () => {
   return (
     <section className={`contactUs`}>
       <div className="wrapper">
+        <div className={`title`}>
+          <h2>Contact Us</h2>
+        </div>
         <div className={`container`}>
           <div className={`left`}>
             <img src={contactPix} alt="" />

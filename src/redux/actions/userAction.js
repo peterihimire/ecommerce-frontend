@@ -40,7 +40,7 @@ export const login = (payload) => {
       console.log(response);
       // console.log(response.data.accessToken);
       const { data } = response.data;
-      localStorage.setItem("haladigital_user", JSON.stringify(data));
+      localStorage.setItem("ecommerce_user", JSON.stringify(data));
       await dispatch(loginResponse(data));
       return Promise.resolve(data);
     } catch (err) {
@@ -61,7 +61,7 @@ export const logout = () => {
     } catch (error) {
       return Promise.reject(error);
     } finally {
-      localStorage.removeItem("haladigital_user");
+      localStorage.removeItem("ecommerce_user");
       await dispatch(logoutResponse());
     }
   };

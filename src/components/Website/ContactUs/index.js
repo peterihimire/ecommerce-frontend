@@ -1,5 +1,5 @@
 import React from "react";
-import SmallHero from "../../ui/smallHero";
+// import SmallHero from "../../ui/smallHero";
 import ContactForm from "./contactForm";
 import Contact from "./ourFeature";
 import GrowFast from "./growFast";
@@ -12,7 +12,7 @@ const ContactPage = () => {
         <title>Contact Us - Benkih</title>
       </Helmet>
 
-      <SmallHero title={`Contact Us`} />
+      {/* <SmallHero title={`Contact Us`} /> */}
       <ContactForm />
       <Contact />
       <GrowFast />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Header from "../../components/ui/header";
+import Header from "../../components/ui/headerAuth";
 import Backdrop from "../../components/ui/backdrop";
 import { useLocation } from "react-router-dom";
 // import Footer from "../../components/UI/footer";

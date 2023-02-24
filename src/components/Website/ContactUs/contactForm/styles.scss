@@ -3,6 +3,12 @@
   padding: 100px 0px;
   // background-color: #fff;
 
+   .title {
+    font-size: 22px;
+    text-transform: capitalize;
+    margin: 40px 0px;
+  }
+
   .container {
     display: grid;
     grid-template-columns: 2fr 4fr;

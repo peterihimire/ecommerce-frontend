@@ -1,18 +1,28 @@
 import React, { useState, useEffect } from "react";
-import Input from "../../../../ui/customInput";
-import Textarea from "../../../../ui/customTextarea";
-import Select from "../../../../ui/customSelect";
+import "./styles.scss";
+import Input from "../../../ui/customInput";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 // import * as actions from "../../../../redux/actions/userAction";
-// import { login } from "../../../../redux/actions/userAction";
+import { login } from "../../../../redux/actions/userAction";
 import { useSelector, useDispatch } from "react-redux";
 import { CircularProgress } from "@mui/material";
+import { Visibility } from "@mui/icons-material";
+import { VisibilityOff } from "@mui/icons-material";
+
+// import Input from "../../../../ui/customInput";
+import Textarea from "../../../ui/customTextarea";
+import Select from "../../../ui/customSelect";
+// import { useLocation, Link, useNavigate } from "react-router-dom";
+// import { useFormik } from "formik";
+// import * as Yup from "yup";
+// // import * as actions from "../../../../redux/actions/userAction";
+// import { login } from "../../../../redux/actions/userAction";
+// import { useSelector, useDispatch } from "react-redux";
+// import { CircularProgress } from "@mui/material";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-
-import "./styles.scss";
 
 const Form = () => {
   const navigate = useNavigate();
@@ -68,22 +78,19 @@ const Form = () => {
 
   const formik = useFormik({
     initialValues: {
+      email: "",
+      password: "",
       firstname: "",
       lastname: "",
-      phone: "",
-      email: "",
-      country: "",
-      message: "",
     },
 
     validationSchema: Yup.object({
+      firstname: Yup.string().required("Firstname required *"),
+      lastname: Yup.string().required("Lastname required *"),
       email: Yup.string()
         .email("Invalid email address")
         .required("Email Required *"),
-      firstname: Yup.string().required("Firstname Required *"),
-      lastname: Yup.string().required("Lastname Required *"),
-      phone: Yup.string().required("Phone Required *"),
-      message: Yup.string().required("Message Required *"),
+      password: Yup.string().required("Password Required *"),
     }),
 
     onSubmit: async (values) => {
@@ -95,8 +102,8 @@ const Form = () => {
       // setFormError("");
       setLogging(true);
       try {
-        // const user = await dispatch(login(values));
-        // console.log(user);
+        const user = await dispatch(login(values));
+        console.log(user);
         navigate("/dashboard", { user });
       } catch (err) {
         console.log(err);
@@ -145,9 +152,8 @@ const Form = () => {
   // };
 
   return (
-    <div className={`contact-form`}>
-      {/* <h2>Log into your Account</h2> */}
-
+    <div className={`register-form`}>
+      <h2>Register an Account</h2>
       <form
         onSubmit={formik.handleSubmit}
         // onSubmit={(e) => handleLogin(e)}
@@ -225,7 +231,7 @@ const Form = () => {
           )} */}
           </div>
 
-          <div className={`formGroup`}>
+          {/* <div className={`formGroup`}>
             <div className={`phone-label-wrapper`}>
               <label htmlFor="phone">
                 Phone Number<span>*</span>
@@ -246,9 +252,9 @@ const Form = () => {
             {formik.touched.phone && formik.errors.phone ? (
               <p className="error-msg">{formik.errors.phone}</p>
             ) : null}
-          </div>
+          </div> */}
         </div>
-        <div className={`formGroup`}>
+        {/* <div className={`formGroup`}>
           <Select
             name="country"
             labelText="Country of Residence"
@@ -266,8 +272,56 @@ const Form = () => {
           {formik.touched.country && formik.errors.country ? (
             <p className="error-msg">{formik.errors.country}</p>
           ) : null}
+        </div> */}
+        <div className={`formGroup`}>
+          <Input
+            labelText="Create Password"
+            type={visible ? "text" : "password"}
+            name="password"
+            id="password"
+            required
+            placeholder="Password"
+            // value={loginForm.password}
+            // onChange={(e) => handleFormChange(e.target)}
+            password
+            reveal={() => toggleVisibility()}
+            passIcon={!visible ? <Visibility /> : <VisibilityOff />}
+            value={formik.values.password}
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+          />
+          {formik.touched.password && formik.errors.password ? (
+            <p className={`errorStyle`}>{formik.errors.password}</p>
+          ) : null}
+          {/* {formError.password && (
+            <p className={styles.errorStyle}>{formError.password}</p>
+          )} */}
         </div>
-        <div className={`textarea`}>
+        <div className={`formGroup`}>
+          <Input
+            labelText="Confirm Password"
+            type={visible ? "text" : "password"}
+            name="password"
+            id="password"
+            required
+            placeholder="Password"
+            // value={loginForm.password}
+            // onChange={(e) => handleFormChange(e.target)}
+            password
+            reveal={() => toggleVisibility()}
+            passIcon={!visible ? <Visibility /> : <VisibilityOff />}
+            value={formik.values.password}
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+          />
+          {formik.touched.password && formik.errors.password ? (
+            <p className={`errorStyle`}>{formik.errors.password}</p>
+          ) : null}
+          {/* {formError.password && (
+            <p className={styles.errorStyle}>{formError.password}</p>
+          )} */}
+        </div>
+        {/* <div className={`textarea`}>
           <Textarea
             labelText="Message"
             id="message"
@@ -282,7 +336,7 @@ const Form = () => {
           {formik.touched.message && formik.errors.message ? (
             <p className="error-msg">{formik.errors.message}</p>
           ) : null}
-        </div>
+        </div> */}
 
         <div className={`forgot`}>
           {/* <Link href='/forgot-password'>
@@ -313,7 +367,7 @@ const Form = () => {
             </button>
           </div>
         </div>
-      </form>
+      </form>{" "}
     </div>
   );
 };

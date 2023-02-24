@@ -1,4 +1,3 @@
-// @import "../../../styles/main.scss";
 body.dark-mode {
   .navSide {
     height: 100%;
@@ -14,25 +13,12 @@ body.dark-mode {
     padding: 40px 16px 40px;
     width: 300px;
 
-    // &.show {
-    //   left: 0;
-    // }
-
-    // &.hidden {
-    //   overflow: hidden;
-    // }
-
     @media (max-width: 1264px) {
       position: fixed;
       top: 70px;
-      // left: -100vw;
       z-index: 250;
       transition: left 0.4s ease-in-out;
-      // background: var(--dashBlue);
-      // background: #004ef0;
       background: var(--black);
-      // background: themed("dashSideDrawer");
-      // background: var(--white);
       display: initial;
       justify-content: stretch;
       align-items: stretch;
@@ -40,12 +26,7 @@ body.dark-mode {
       overflow-y: auto;
       padding: 40px 16px 120px;
       width: 300px;
-      // top: 0;
-      // left: 0;
-      // bottom: 0;
-      //     position: fixed;
       left: -107%;
-      // top: -15px;
 
       &.show {
         left: 0;
@@ -76,7 +57,6 @@ body.dark-mode {
       justify-content: stretch;
       width: var(--full);
       height: auto;
-      // color: themed("textColor");
 
       @media (max-width: 1264px) {
         flex-direction: column;
@@ -103,7 +83,6 @@ body.dark-mode {
           font-weight: bold;
 
           @media (max-width: 1264px) {
-            // color: var(--black) !important;
             font-size: 16px;
             font-weight: bold;
           }
@@ -119,8 +98,8 @@ body.dark-mode {
         display: flex;
         align-items: center;
         padding: 15px 10px;
-        color: var(--white) // color: themed("textColor");
-          span {
+        color: var(--white);
+        span {
           margin-left: 10px;
         }
       }
@@ -155,22 +134,17 @@ body.dark-mode {
         margin-left: 10px;
       }
     }
-    // }
   }
 }
 
-// @import "../../../styles/main.scss";
 body.light-mode {
   .navSide {
-    // @include themify($themes) {
     height: 100%;
     display: flex;
     position: fixed;
     // position: relative;
     transition: left 0.4s ease-in-out;
-    // background: var(--dashBlue);
-    // background: #004ef0;
-    // background: themed("dashSideDrawer");
+
     background: var(--white);
     // background: themed("bg");
     display: initial;
@@ -178,7 +152,8 @@ body.light-mode {
     align-items: stretch;
     margin-left: 0;
     overflow-y: auto;
-    padding: 40px 1px 40px 16px;
+    padding: 40px 16px 40px;
+
     width: 300px;
     border-right: #dbdef2 solid 1px;
     // box-shadow: 0px 5px 15px #dbdef2;
@@ -194,12 +169,8 @@ body.light-mode {
     @media (max-width: 1264px) {
       position: fixed;
       top: 70px;
-      // left: -100vw;
       z-index: 250;
       transition: left 0.4s ease-in-out;
-      // background: var(--dashBlue);
-      // background: #004ef0;
-      // background: themed("dashSideDrawer");
       background: var(--white);
       display: initial;
       justify-content: stretch;
@@ -208,12 +179,7 @@ body.light-mode {
       overflow-y: auto;
       padding: 40px 16px 120px;
       width: 300px;
-      // top: 0;
-      // left: 0;
-      // bottom: 0;
-      //     position: fixed;
       left: -107%;
-      // top: -15px;
 
       &.show {
         left: 0;
@@ -244,7 +210,6 @@ body.light-mode {
       justify-content: stretch;
       width: var(--full);
       height: auto;
-      // color: themed("textColor");
 
       @media (max-width: 1264px) {
         flex-direction: column;
@@ -267,7 +232,7 @@ body.light-mode {
 
         > a {
           font-size: 16px;
-          color: var(--white) !important;
+          color: var(--black) !important;
           font-weight: bold;
 
           @media (max-width: 1264px) {
@@ -287,15 +252,15 @@ body.light-mode {
         display: flex;
         align-items: center;
         padding: 15px 10px;
-        color: var(--white) // color: themed("textColor");
-          span {
+        color: var(--black);
+        span {
           margin-left: 10px;
         }
       }
       .active {
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(67, 66, 66, 0.3);
         color: themed("textColor");
-        border-right: solid #fff 5px;
+        border-right: solid var(--black) 5px;
         border-radius: 5px;
       }
     }

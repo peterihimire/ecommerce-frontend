@@ -181,24 +181,31 @@ const DashboardNav = ({ isOpen, bgChange }) => {
       <ul className={`navLinks`}>
         {getLinks().map((link, index) => {
           return (
-            <Accordion
+            <NavLink
               key={index}
-              focus={index}
-              title={link.title}
-              content={link?.content?.map((cont, index) => {
-                return (
-                  <NavLink
-                    key={index}
-                    className={`dashLink`}
-                    to={
-                      dashboardType === "admin" ? `admin/${cont}` : `/${cont}`
-                    }
-                  >
-                    <span>{cont}</span>
-                  </NavLink>
-                );
-              })}
-            />
+              className={`dashLink`}
+              to={dashboardType === "admin" ? `admin/${link.link}` : `/${link.link}`}
+            >
+              <span>{link.title}</span>
+            </NavLink>
+            // <Accordion
+            //   key={index}
+            //   focus={index}
+            //   title={link.title}
+            //   content={link?.content?.map((cont, index) => {
+            //     return (
+            //       <NavLink
+            //         key={index}
+            //         className={`dashLink`}
+            //         to={
+            //           dashboardType === "admin" ? `admin/${cont}` : `/${cont}`
+            //         }
+            //       >
+            //         <span>{cont}</span>
+            //       </NavLink>
+            //     );
+            //   })}
+            // />
           );
         })}
         <li></li>
