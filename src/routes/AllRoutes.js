@@ -51,22 +51,23 @@ const AllRoutes = () => {
 
         {/* DASHBOARD LAYOUT */}
         <Route element={<DashboardLayout />}>
-          <Route
+          {/* <Route
             path="/dashboard"
             element={
               <ProtectedRoutes isAllowed={!!user.authenticated}>
                 <DashPage />
               </ProtectedRoutes>
             }
-          />
+          /> */}
           <Route
-            path="/admin/dashboard"
+            path="/dashboard"
             element={
               <ProtectedRoutes
                 isAllowed={
-                  !!admin.authenticated && admin.hasOwnProperty("adminData")
+                  !!user.authenticated
+                  // && user.userData.isAdmin
                 }
-                redirectPath="/admin/login"
+                redirectPath="/login"
               >
                 <AdminDash />
               </ProtectedRoutes>

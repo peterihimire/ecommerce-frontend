@@ -1,5 +1,5 @@
 import * as actionTypes from "../actions/actionTypes";
-const adminData = JSON.parse(localStorage.getItem("haladigital_admin"));
+const adminData = JSON.parse(localStorage.getItem("ecommerce_admin"));
 
 const defaultState = {
   authenticated: !!adminData,

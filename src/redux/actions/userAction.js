@@ -45,7 +45,7 @@ export const login = (payload) => {
       return Promise.resolve(data);
     } catch (err) {
       console.log(err);
-      dispatch(loginError(err.response));
+      // dispatch(loginError(err.response));
       return Promise.reject(err);
     } finally {
       dispatch(loginStart(false));

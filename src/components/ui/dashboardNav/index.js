@@ -29,8 +29,8 @@ const DashboardNav = ({ isOpen, bgChange }) => {
 
   const [loggingOut, setLoggingOut] = useState(false);
   const [dashboardType, setDashboardType] = useState(""); // controls the dashboard - value can be admin | applicant | student
-  const [adminData, setAdminData] = useState(admin?.adminData || {});
-  const [userData, setUserData] = useState(user?.userData?.student || {});
+  const [adminData, setAdminData] = useState(user?.userData || {});
+  const [userData, setUserData] = useState(user?.userData || {});
   // console.log(studentData);
   const [name, setDashboardName] = useState("");
   console.log(adminData);
@@ -184,7 +184,11 @@ const DashboardNav = ({ isOpen, bgChange }) => {
             <NavLink
               key={index}
               className={`dashLink`}
-              to={dashboardType === "admin" ? `admin/${link.link}` : `/${link.link}`}
+              to={
+                dashboardType === "admin"
+                  ? `admin/${link.link}`
+                  : `/${link.link}`
+              }
             >
               <span>{link.title}</span>
             </NavLink>

@@ -213,7 +213,7 @@ const Form = () => {
               {logging ? (
                 <CircularProgress size={20} style={{ color: "#fff" }} />
               ) : (
-                "Send"
+                "Login"
               )}
             </button>
           </div>
