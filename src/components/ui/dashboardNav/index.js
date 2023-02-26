@@ -23,17 +23,15 @@ const DashboardNav = ({ isOpen, bgChange }) => {
     return state;
   });
   console.log(auth);
-  const { user, admin } = auth;
+  const { user } = auth;
   console.log(user);
-  console.log(admin);
 
   const [loggingOut, setLoggingOut] = useState(false);
   const [dashboardType, setDashboardType] = useState(""); // controls the dashboard - value can be admin | applicant | student
-  const [adminData, setAdminData] = useState(user?.userData || {});
+
   const [userData, setUserData] = useState(user?.userData || {});
   // console.log(studentData);
   const [name, setDashboardName] = useState("");
-  console.log(adminData);
 
   // const userLinks = [
   //   { title: "Dashboard", link: "dashboard" },
@@ -83,23 +81,23 @@ const DashboardNav = ({ isOpen, bgChange }) => {
     }
   }, [user]);
 
-  useEffect(() => {
-    if (admin?.adminData?.staff) {
-      setAdminData(admin?.adminData?.staff);
-    }
-  }, [admin]);
+  // useEffect(() => {
+  //   if (admin?.adminData?.staff) {
+  //     setAdminData(admin?.adminData?.staff);
+  //   }
+  // }, [admin]);
 
   useEffect(() => {
     // setDashboardType(type);
-    if (user.authenticated) {
+    if (user?.authenticated && user?.userData?.isAdmin === false) {
       setDashboardType("user");
-    } else if (admin.authenticated) {
+    } else if (user?.authenticated && user?.userData?.isAdmin === true) {
       setDashboardType("admin");
     }
   }, [
     // type,
-    user.authenticated,
-    admin.authenticated,
+    user?.authenticated,
+    user?.userData?.isAdmin,
   ]);
 
   const goto = (url) => {
@@ -127,34 +125,20 @@ const DashboardNav = ({ isOpen, bgChange }) => {
     }
   };
   console.log(dashboardType);
+
   useEffect(() => {
     if (user.authenticated) {
       setDashboardName();
       // `${applicantData.surname} ${applicantData.firstname} ${applicantData.othername}`
-    } else if (admin.authenticated) {
-      setDashboardName();
-      // `${admin?.adminData?.staff.surname} ${admin?.adminData?.staff.firstname} ${admin?.adminData?.staff.othername}`
     }
-  }, [
-    user,
-    admin,
-    userData.firstname,
-    userData.othername,
-    userData.surname,
-    adminData.firstname,
-    adminData.othername,
-    adminData.surname,
-  ]);
+  }, [user, userData.firstname, userData.othername, userData.surname]);
 
   const handleLogout = async () => {
     // console.log(applicant, admin);
     try {
       if (auth.user.authenticated) {
         await dispatch(logout());
-        // navigate("/login");
-      } else if (auth.admin.authenticated) {
-        await dispatch(adminLogout());
-        // navigate("/admin/login");
+        navigate("/login");
       }
       // if (applicant.authenticated) {
       //   await logoutApplicant();

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./styles.scss";
 import Input from "../../../ui/customInput";
-import { useLocation, Link, useNavigate } from "react-router-dom";
+import { useLocation, Link, useNavigate, useParams } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 // import * as actions from "../../../../redux/actions/userAction";
-import { login } from "../../../../redux/actions/userAction";
+import { verify } from "../../../../redux/actions/userAction";
 import { useSelector, useDispatch } from "react-redux";
 import { CircularProgress } from "@mui/material";
 import { Visibility } from "@mui/icons-material";
@@ -14,6 +14,10 @@ import { VisibilityOff } from "@mui/icons-material";
 const Form = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  let { token } = useParams();
+  console.log(token);
+  console.log(typeof token);
+  console.log(location);
   const from = location?.state?.from?.pathname;
   console.log(from);
   const dispatch = useDispatch();
@@ -23,8 +27,8 @@ const Form = () => {
   //     userLogin({ email: "peterihimire@gmail.com", password: "password" })
   //   )
   // );
-  // const [showModal, setShowModal] = useState(false);
 
+  const [emailToken, setEmailToken] = useState(null);
   const [loginForm, setLoginForm] = useState({
     email: "",
     password: "",
@@ -85,7 +89,7 @@ const Form = () => {
       // setFormError("");
       setLogging(true);
       try {
-        const user = await dispatch(login(values));
+        const user = await dispatch(verify(values));
         console.log(user);
         navigate("/dashboard", { user });
       } catch (err) {
@@ -107,6 +111,19 @@ const Form = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
+
+  useEffect(() => {
+    setEmailToken(token);
+    const verifyHandler = async () => {
+      try {
+        const response = await dispatch(verify(emailToken));
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    verifyHandler();
+  }, [token, emailToken]);
 
   // const handleLogin = async (e) => {
   //   e.preventDefault();
@@ -136,7 +153,7 @@ const Form = () => {
 
   return (
     <div className={`login-form`}>
-      <h2>Login your Account</h2>
+      <h2>Verify Account</h2>
 
       <form
         onSubmit={formik.handleSubmit}
@@ -165,30 +182,7 @@ const Form = () => {
             <p className={styles.errorStyle}>{formError.email}</p>
           )} */}
         </div>
-        <div className={`formGroup`}>
-          <Input
-            labelText="Enter Password"
-            type={visible ? "text" : "password"}
-            name="password"
-            id="password"
-            required
-            placeholder="Password"
-            // value={loginForm.password}
-            // onChange={(e) => handleFormChange(e.target)}
-            password
-            reveal={() => toggleVisibility()}
-            passIcon={!visible ? <Visibility /> : <VisibilityOff />}
-            value={formik.values.password}
-            onBlur={formik.handleBlur}
-            onChange={formik.handleChange}
-          />
-          {formik.touched.password && formik.errors.password ? (
-            <p className={`errorStyle`}>{formik.errors.password}</p>
-          ) : null}
-          {/* {formError.password && (
-            <p className={styles.errorStyle}>{formError.password}</p>
-          )} */}
-        </div>
+
         <div className={`forgot`}>
           {/* <Link href='/forgot-password'>
             <a className={`linkStyle`}>Forgot Password?</a>

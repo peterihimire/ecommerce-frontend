@@ -5,7 +5,7 @@ import { useLocation, Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 // import * as actions from "../../../../redux/actions/userAction";
-import { login } from "../../../../redux/actions/userAction";
+import { register } from "../../../../redux/actions/userAction";
 import { useSelector, useDispatch } from "react-redux";
 import { CircularProgress } from "@mui/material";
 import { Visibility } from "@mui/icons-material";
@@ -22,7 +22,7 @@ import Select from "../../../ui/customSelect";
 // import { useSelector, useDispatch } from "react-redux";
 // import { CircularProgress } from "@mui/material";
 import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+// import "react-phone-input-2/lib/style.css";
 
 const Form = () => {
   const navigate = useNavigate();
@@ -80,6 +80,7 @@ const Form = () => {
     initialValues: {
       email: "",
       password: "",
+      confirmPassword: "",
       firstname: "",
       lastname: "",
     },
@@ -91,10 +92,13 @@ const Form = () => {
         .email("Invalid email address")
         .required("Email Required *"),
       password: Yup.string().required("Password Required *"),
+      confirmPassword: Yup.string().required("Confirm Password Required *"),
     }),
 
     onSubmit: async (values) => {
       console.log(values);
+      const { confirmPassword, ...others } = values;
+      console.log(others);
       // dispatch(actions.login({ ...values }));
       // // dispatch(userLogin({ ...values }));
       // // dispatch(actions.login({ ...values, resetForm }));
@@ -102,9 +106,9 @@ const Form = () => {
       // setFormError("");
       setLogging(true);
       try {
-        const user = await dispatch(login(values));
+        const user = await dispatch(register(others));
         console.log(user);
-        navigate("/dashboard", { user });
+        // navigate("/dashboard", { user });
       } catch (err) {
         console.log(err);
         setError(err.data.data);
@@ -301,8 +305,8 @@ const Form = () => {
           <Input
             labelText="Confirm Password"
             type={visible ? "text" : "password"}
-            name="password"
-            id="password"
+            name="confirmPassword"
+            id="confirmPassword"
             required
             placeholder="Password"
             // value={loginForm.password}
@@ -310,12 +314,12 @@ const Form = () => {
             password
             reveal={() => toggleVisibility()}
             passIcon={!visible ? <Visibility /> : <VisibilityOff />}
-            value={formik.values.password}
+            value={formik.values.confirmPassword}
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
           />
-          {formik.touched.password && formik.errors.password ? (
-            <p className={`errorStyle`}>{formik.errors.password}</p>
+          {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
+            <p className={`errorStyle`}>{formik.errors.confirmPassword}</p>
           ) : null}
           {/* {formError.password && (
             <p className={styles.errorStyle}>{formError.password}</p>
@@ -347,7 +351,7 @@ const Form = () => {
           {error && <p className={`errorStyle`}>*{error}</p>}
           <div className={`submitBtn`}>
             <button
-              className="btn-primary btn-large"
+              className="btn-primary btn-block"
               type="submit"
               disabled={logging}
               onClick={(e) => {
@@ -362,7 +366,7 @@ const Form = () => {
               {logging ? (
                 <CircularProgress size={20} style={{ color: "#fff" }} />
               ) : (
-                "Send"
+                "Register"
               )}
             </button>
           </div>

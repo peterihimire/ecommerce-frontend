@@ -6,13 +6,8 @@ const baseURL = "http://localhost:4000/";
 
 const getUser = () => {
   const user = store.getState().user;
-  const admin = store.getState().user;
-  const token = admin?.authenticated
-    ? admin?.userData?.token
-    : user?.authenticated
-    ? user?.userData?.token
-    : "";
-  console.log(admin, "yes", user, "yes");
+
+  const token = user?.authenticated ? user?.userData?.token : "";
   console.log(token);
   return token || "";
 };
@@ -42,16 +37,11 @@ $axios.interceptors.response.use(
   async (error) => {
     console.log(error);
     if (
-      error?.response?.status === 401 ||
-      error?.response?.data?.message === "Unauthenticated."
+      error?.response?.status === 422 ||
+      error?.response?.data?.status === "Unsuccessful"
     ) {
       localStorage.removeItem("ecommerce_user");
-      localStorage.removeItem("ecommerce_admin");
-      if (error.config?.url.includes("admin")) {
-        window.location.href = "/admin/login";
-      } else {
-        window.location.href = "/login";
-      }
+      window.location.href = "/login";
     }
     return Promise.reject(error.response);
   }

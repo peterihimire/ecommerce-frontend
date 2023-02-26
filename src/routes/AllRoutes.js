@@ -12,6 +12,7 @@ import { CollectionItemPage } from "../pages/collectionItem";
 import { CollectionsPage } from "../pages/collections";
 import { LoginPage } from "../pages/login";
 import { RegisterPage } from "../pages/register";
+import { VerifyPage } from "../pages/verify";
 // import { AdminLogin } from "../pages/adminLogin";
 
 import { DashPage } from "../pages/dashboard";
@@ -46,6 +47,7 @@ const AllRoutes = () => {
         <Route element={<AuthLayout />}>
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
+          <Route path="verify/:token" element={<VerifyPage />} />
           {/* <Route path="/admin/login" element={<AdminLogin />} /> */}
         </Route>
 
