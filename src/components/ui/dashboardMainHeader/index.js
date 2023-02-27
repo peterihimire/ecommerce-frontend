@@ -25,8 +25,8 @@ const DashboardHeader = ({ isOpen, clicked }) => {
   const [open, setOpen] = useState(false);
   const [bgChange, setBgChange] = useState(false);
   const [dashboardType, setDashboardType] = useState(""); // controls the dashboard - value can be admin || user
-  const [adminData, setAdminData] = useState(admin?.adminData || {});
-  const [userData, setUserData] = useState(user?.userData?.applicant || {});
+  const [userData, setUserData] = useState(user?.userData || {});
+
   const [name, setDashboardName] = useState("");
 
   // const router = useRouter();
@@ -65,7 +65,7 @@ const DashboardHeader = ({ isOpen, clicked }) => {
 
   let adminLink = adminLinks?.filter((link) => {
     console.log(link.link === "dashboard");
-    return link.link === location.pathname.slice(7);
+    return link.link === location.pathname.slice(1);
   });
   // console.log(adminLink[0].title);
 
@@ -108,38 +108,29 @@ const DashboardHeader = ({ isOpen, clicked }) => {
   ];
 
   useEffect(() => {
+    if (user?.userData) {
+      setUserData(user?.userData);
+    }
+  }, [user]);
+
+  useEffect(() => {
     // setDashboardType(type);
-    if (user.authenticated) {
+    if (user?.authenticated && user?.userData?.isAdmin === false) {
       setDashboardType("user");
-    } else if (admin.authenticated) {
+    } else if (user?.authenticated && user?.userData?.isAdmin === true) {
       setDashboardType("admin");
     }
   }, [
     // type,
-    user.authenticated,
-    admin.authenticated,
+    user?.authenticated,
+    user?.userData?.isAdmin,
   ]);
 
   useEffect(() => {
     if (user.authenticated) {
-      setDashboardName(
-        `${userData?.surname} ${userData?.firstname} ${userData?.othername}`
-      );
-    } else if (admin.authenticated) {
-      setDashboardName(
-        `${admin?.adminData?.staff.surname} ${admin?.adminData?.staff.firstname} ${admin?.adminData?.staff.othername}`
-      );
+      setDashboardName(`${userData.lastname} ${userData.firstname}`);
     }
-  }, [
-    user,
-    admin,
-    userData.firstname,
-    userData.othername,
-    userData.surname,
-    adminData.firstname,
-    adminData.othername,
-    adminData.surname,
-  ]);
+  }, [user, userData.firstname, userData.lastname]);
   console.log(userData);
   console.log(name);
 

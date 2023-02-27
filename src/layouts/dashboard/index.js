@@ -59,6 +59,7 @@ const DashboardLayout = () => {
           </div>
           <div className={`rightSide`}>
             <DashboardRightBar />
+            <DashboardRightBar />
           </div>
         </div>
       </main>

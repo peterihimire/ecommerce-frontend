@@ -8,11 +8,11 @@ const HomePage = () => {
   return (
     <div className="homepage">
       <Helmet>
-        <title>Home | HalaDigital</title>
+        <title>Dashboard - Ecommerce</title>
       </Helmet>
       {/* <div className="wrapper"> */}
-        <HomeHero />
-        <OneWallet />
+      <HomeHero />
+      <OneWallet />
       {/* </div> */}
     </div>
   );

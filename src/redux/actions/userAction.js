@@ -109,8 +109,9 @@ export const verify = (payload) => {
       console.log(response);
       // console.log(response.data.accessToken);
       const { data } = response.data;
-      // localStorage.setItem("ecommerce_user", JSON.stringify(data));
-      // await dispatch(registerResponse(data));
+      localStorage.setItem("ecommerce_user", JSON.stringify(data));
+      // await dispatch(verifyResponse(data));
+      await dispatch(loginResponse(data));
       return Promise.resolve(data);
     } catch (err) {
       console.log(err);
@@ -133,6 +134,7 @@ export const login = (payload) => {
       console.log(response);
       // console.log(response.data.accessToken);
       const { data } = response.data;
+      console.log(data);
       localStorage.setItem("ecommerce_user", JSON.stringify(data));
       await dispatch(loginResponse(data));
       return Promise.resolve(data);

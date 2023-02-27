@@ -67,40 +67,7 @@ const Form = () => {
   //   };
   // });
 
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
 
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .email("Invalid email address")
-        .required("Email Required *"),
-      password: Yup.string().required("Password Required *"),
-    }),
-
-    onSubmit: async (values) => {
-      console.log(values);
-      // dispatch(actions.login({ ...values }));
-      // // dispatch(userLogin({ ...values }));
-      // // dispatch(actions.login({ ...values, resetForm }));
-
-      // setFormError("");
-      setLogging(true);
-      try {
-        const user = await dispatch(verify(values));
-        console.log(user);
-        navigate("/dashboard", { user });
-      } catch (err) {
-        console.log(err);
-        setError(err.data.data);
-        // setFormError(err.data.errors);
-      } finally {
-        setLogging(false);
-      }
-    },
-  });
 
   // Clears the post verified error
   useEffect(() => {
@@ -118,6 +85,7 @@ const Form = () => {
       try {
         const response = await dispatch(verify(emailToken));
         console.log(response);
+        navigate("/dashboard", { user });
       } catch (error) {
         console.log(error);
       }
@@ -156,7 +124,7 @@ const Form = () => {
       <h2>Verify Account</h2>
 
       <form
-        onSubmit={formik.handleSubmit}
+        // onSubmit={formik.handleSubmit}
         // onSubmit={(e) => handleLogin(e)}
       >
         <div className={`formGroup`}>
@@ -170,17 +138,17 @@ const Form = () => {
             // value={loginForm.email}
             // onChange={(e) => handleFormChange(e.target)}
 
-            value={formik.values.email}
-            onBlur={formik.handleBlur}
-            onChange={formik.handleChange}
+            // value={formik.values.email}
+            // onBlur={formik.handleBlur}
+            // onChange={formik.handleChange}
           />
-          {formik.touched.email && formik.errors.email ? (
+          {/* {formik.touched.email && formik.errors.email ? (
             <p className={`errorStyle`}>{formik.errors.email}</p>
-          ) : null}
+          ) : null} */}
 
-          {/* {formError.email && (
-            <p className={styles.errorStyle}>{formError.email}</p>
-          )} */}
+          {formError.email && (
+            <p className={`errorStyle`}>{formError.email}</p>
+          )}
         </div>
 
         <div className={`forgot`}>

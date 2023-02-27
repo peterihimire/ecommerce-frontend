@@ -33,34 +33,34 @@ const DashboardNav = ({ isOpen, bgChange }) => {
   // console.log(studentData);
   const [name, setDashboardName] = useState("");
 
-  // const userLinks = [
-  //   { title: "Dashboard", link: "dashboard" },
-  //   { title: "Payment History", link: "payment-history" },
-  //   { title: "Documents", link: "documents" },
-  //   // { title: "Logout", link: "logout" },
-  // ];
-
   const userLinks = [
-    {
-      title: "Dashboard",
-      content: ["smart-sms", "delivery-report", "phone-group"],
-    },
-    {
-      title: "Payment History",
-      content: [
-        "dashboard",
-        "sms",
-        "smart-sms",
-        "delivery-report",
-        "phone-group",
-      ],
-    },
-    {
-      title: "Documents",
-      content: ["dashboard", "sms", "smart-sms"],
-    },
+    { title: "Dashboard", link: "dashboard" },
+    { title: "Payment History", link: "payment-history" },
+    { title: "Documents", link: "documents" },
     // { title: "Logout", link: "logout" },
   ];
+
+  // const userLinks = [
+  //   {
+  //     title: "Dashboard",
+  //     content: ["smart-sms", "delivery-report", "phone-group"],
+  //   },
+  //   {
+  //     title: "Payment History",
+  //     content: [
+  //       "dashboard",
+  //       "sms",
+  //       "smart-sms",
+  //       "delivery-report",
+  //       "phone-group",
+  //     ],
+  //   },
+  //   {
+  //     title: "Documents",
+  //     content: ["dashboard", "sms", "smart-sms"],
+  //   },
+  //   // { title: "Logout", link: "logout" },
+  // ];
 
   const adminLinks = [
     { title: "Dashboard", link: "dashboard" },
@@ -76,16 +76,12 @@ const DashboardNav = ({ isOpen, bgChange }) => {
   ];
 
   useEffect(() => {
-    if (user?.userData?.applicant) {
-      setUserData(user?.userData?.applicant);
+    if (user?.userData) {
+      setUserData(user?.userData);
     }
   }, [user]);
 
-  // useEffect(() => {
-  //   if (admin?.adminData?.staff) {
-  //     setAdminData(admin?.adminData?.staff);
-  //   }
-  // }, [admin]);
+ 
 
   useEffect(() => {
     // setDashboardType(type);
@@ -128,10 +124,9 @@ const DashboardNav = ({ isOpen, bgChange }) => {
 
   useEffect(() => {
     if (user.authenticated) {
-      setDashboardName();
-      // `${applicantData.surname} ${applicantData.firstname} ${applicantData.othername}`
+      setDashboardName(`${userData.lastname} ${userData.firstname}`);
     }
-  }, [user, userData.firstname, userData.othername, userData.surname]);
+  }, [user, userData.firstname, userData.lastname]);
 
   const handleLogout = async () => {
     // console.log(applicant, admin);
@@ -140,16 +135,6 @@ const DashboardNav = ({ isOpen, bgChange }) => {
         await dispatch(logout());
         navigate("/login");
       }
-      // if (applicant.authenticated) {
-      //   await logoutApplicant();
-      //   // console.log("Applicant is in focus");
-      // } else if (admin.authenticated) {
-      //   setLoggingOut(true);
-      //   await logoutAdmin();
-      // } else if (student.authenticated) {
-      //   // console.log("Student is in focus");
-      //   await logoutStudent();
-      // }
     } catch (err) {
       console.log(err);
     } finally {
@@ -168,32 +153,10 @@ const DashboardNav = ({ isOpen, bgChange }) => {
             <NavLink
               key={index}
               className={`dashLink`}
-              to={
-                dashboardType === "admin"
-                  ? `admin/${link.link}`
-                  : `/${link.link}`
-              }
+              to={dashboardType === "admin" ? `${link.link}` : `/${link.link}`}
             >
               <span>{link.title}</span>
             </NavLink>
-            // <Accordion
-            //   key={index}
-            //   focus={index}
-            //   title={link.title}
-            //   content={link?.content?.map((cont, index) => {
-            //     return (
-            //       <NavLink
-            //         key={index}
-            //         className={`dashLink`}
-            //         to={
-            //           dashboardType === "admin" ? `admin/${cont}` : `/${cont}`
-            //         }
-            //       >
-            //         <span>{cont}</span>
-            //       </NavLink>
-            //     );
-            //   })}
-            // />
           );
         })}
         <li></li>
