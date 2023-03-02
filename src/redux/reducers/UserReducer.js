@@ -17,10 +17,10 @@ const UserReducer = (state = defaultState, action) => {
         ...state,
         loading: action.payload,
       };
-    case actionTypes.USER_LOGIN_RESPONSE:
+    case actionTypes.USER_INFO_RESPONSE:
       return {
         ...state,
-        response: action.payload,
+        userData: action.payload,
       };
     case actionTypes.USER_LOGIN_ERROR:
       return {

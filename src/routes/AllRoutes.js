@@ -53,14 +53,6 @@ const AllRoutes = () => {
 
         {/* DASHBOARD LAYOUT */}
         <Route element={<DashboardLayout />}>
-          {/* <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoutes isAllowed={!!user.authenticated}>
-                <DashPage />
-              </ProtectedRoutes>
-            }
-          /> */}
           <Route
             path="/dashboard"
             element={

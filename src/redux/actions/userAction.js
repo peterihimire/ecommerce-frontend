@@ -45,6 +45,28 @@ export const verifyResponse = (payload) => {
   };
 };
 
+// INFO
+export const infoStart = (payload) => {
+  return {
+    type: actionTypes.USER_INFO_START,
+    payload,
+  };
+};
+
+export const infoError = (payload) => {
+  return {
+    type: actionTypes.USER_INFO_ERROR,
+    payload,
+  };
+};
+
+export const infoResponse = (payload) => {
+  return {
+    type: actionTypes.USER_INFO_RESPONSE,
+    payload,
+  };
+};
+
 // LOGIN
 export const loginStart = (payload) => {
   return {
@@ -144,6 +166,40 @@ export const login = (payload) => {
       return Promise.reject(err);
     } finally {
       dispatch(loginStart(false));
+    }
+  };
+};
+
+// user info
+
+export const userInfo = () => {
+  return async (dispatch) => {
+    dispatch(infoStart(true));
+
+    try {
+      const response = await userAPI.getUserInfo();
+      console.log(response);
+      // console.log(response.data.accessToken);
+
+      const userdata = JSON.parse(
+        localStorage.getItem("ecommerce_user") || "{}"
+      );
+      const { data } = response.data;
+      console.log(userdata);
+      console.log(data);
+      const newData = { ...userdata, ...{ data } };
+      console.log(newData);
+
+      localStorage.setItem("ecommerce_user", JSON.stringify(newData));
+
+      await dispatch(infoResponse(newData));
+      return Promise.resolve(newData);
+    } catch (err) {
+      console.log(err);
+      // dispatch(loginError(err.response));
+      return Promise.reject(err);
+    } finally {
+      dispatch(infoStart(false));
     }
   };
 };

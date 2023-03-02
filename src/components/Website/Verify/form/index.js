@@ -5,7 +5,7 @@ import { useLocation, Link, useNavigate, useParams } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 // import * as actions from "../../../../redux/actions/userAction";
-import { verify } from "../../../../redux/actions/userAction";
+import { verify, userInfo } from "../../../../redux/actions/userAction";
 import { useSelector, useDispatch } from "react-redux";
 import { CircularProgress } from "@mui/material";
 import { Visibility } from "@mui/icons-material";
@@ -14,7 +14,7 @@ import { VisibilityOff } from "@mui/icons-material";
 const Form = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  let { token } = useParams();
+  const { token } = useParams();
   console.log(token);
   console.log(typeof token);
   console.log(location);
@@ -67,8 +67,6 @@ const Form = () => {
   //   };
   // });
 
-
-
   // Clears the post verified error
   useEffect(() => {
     if (error) {
@@ -79,115 +77,89 @@ const Form = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
 
+  // useEffect(() => {
+  //   setEmailToken(token);
+  //   const verifyHandler = async () => {
+  //     try {
+  //       const response = await dispatch(verify(emailToken));
+  //       console.log(response);
+  //       const info = await dispatch(userInfo());
+  //       console.log(info);
+  //       navigate("/dashboard", { user: "This is YLMBHG" });
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   verifyHandler();
+  // }, [token, emailToken, dispatch, navigate]);
+
   useEffect(() => {
     setEmailToken(token);
-    const verifyHandler = async () => {
-      try {
-        const response = await dispatch(verify(emailToken));
-        console.log(response);
-        navigate("/dashboard", { user });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    verifyHandler();
-  }, [token, emailToken]);
+  }, [token]);
 
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   setFormError("");
-  //   setLogging(true);
-  //   try {
-  //     const user = await dispatch(login(loginForm));
-  //     console.log(user);
-  //     navigate("/dashboard", { user });
-  //     // navigate(from, { replace: true });
-  //     // const user = await applicantLogin(loginForm);
-  //     // await getApplicantData();
-  //     // if (user.applicant.completed) {
-  //     //   history.push("/applicant/dashboard");
-  //     // } else {
-  //     //   history.push("/applicant/personal-information", {
-  //     //     application_state: user.applicant.application_state,
-  //     //   });
-  //     // }
-  //   } catch (err) {
-  //     console.log(err);
-  //     setFormError(err.data.errors);
-  //   } finally {
-  //     setLogging(false);
-  //   }
-  // };
+  const handleLogin = async (e) => {
+    // e.preventDefault();
+
+    setFormError("");
+    setLogging(true);
+    try {
+      const response = await dispatch(verify(emailToken));
+      console.log(response);
+      const info = await dispatch(userInfo());
+      console.log(info);
+      navigate("/dashboard", { user: "This is YLMBHG" });
+      // const user = await dispatch(login(loginForm));
+      // console.log(user);
+      // navigate("/dashboard", { user });
+      // navigate(from, { replace: true });
+      // const user = await applicantLogin(loginForm);
+      // await getApplicantData();
+      // if (user.applicant.completed) {
+      //   history.push("/applicant/dashboard");
+      // } else {
+      //   history.push("/applicant/personal-information", {
+      //     application_state: user.applicant.application_state,
+      //   });
+      // }
+    } catch (err) {
+      console.log(err);
+      setFormError(err.data.errors);
+    } finally {
+      setLogging(false);
+    }
+  };
 
   return (
     <div className={`login-form`}>
       <h2>Verify Account</h2>
 
-      <form
-        // onSubmit={formik.handleSubmit}
-        // onSubmit={(e) => handleLogin(e)}
-      >
-        <div className={`formGroup`}>
-          <Input
-            labelText="Enter Email"
-            type="email"
-            name="email"
-            id="email"
-            required
-            placeholder="Email"
-            // value={loginForm.email}
-            // onChange={(e) => handleFormChange(e.target)}
+      <p>Congratulations, your email verification was successful.</p>
 
-            // value={formik.values.email}
-            // onBlur={formik.handleBlur}
-            // onChange={formik.handleChange}
-          />
-          {/* {formik.touched.email && formik.errors.email ? (
-            <p className={`errorStyle`}>{formik.errors.email}</p>
-          ) : null} */}
-
-          {formError.email && (
-            <p className={`errorStyle`}>{formError.email}</p>
-          )}
-        </div>
-
-        <div className={`forgot`}>
-          {/* <Link href='/forgot-password'>
-            <a className={`linkStyle`}>Forgot Password?</a>
-          </Link> */}
-        </div>
-        <div className={`btnWithError`}>
-          {error && <p className={`errorStyle`}>*{error}</p>}
-          <div className={`submitBtn`}>
-            <button
-              className="btn-primary  btn-block"
-              type="submit"
-              disabled={logging}
-              onClick={(e) => {
-                // e.preventDefault();
-                // console.log("Clicked");
-                // router.push("/dashboard");
-              }}
-            >
-              {/* Send */}
-              {/* {loading && "Loading..."}
+      <div className={`btnWithError`}>
+        {error && <p className={`errorStyle`}>*{error}</p>}
+        <div className={`submitBtn`}>
+          <button
+            className="btn-primary  btn-block"
+            type="submit"
+            disabled={logging}
+            onClick={(e) => {
+              // e.preventDefault();
+              handleLogin();
+              // console.log("Clicked");
+              // router.push("/dashboard");
+            }}
+          >
+            {/* Send */}
+            {/* {loading && "Loading..."}
             {!loading && <div>Send</div>} */}
-              {logging ? (
-                <CircularProgress size={20} style={{ color: "#fff" }} />
-              ) : (
-                "Login"
-              )}
-            </button>
-          </div>
+            {logging ? (
+              <CircularProgress size={20} style={{ color: "#fff" }} />
+            ) : (
+              "Proceed"
+            )}
+          </button>
         </div>
-
-        {/* <div className={`register`}>
-          <span>Don't have an account? </span>
-          <Link href='/register'>
-            <a className={styles.linkStyle}>Register</a>
-          </Link>
-        </div> */}
-      </form>
+      </div>
     </div>
   );
 };

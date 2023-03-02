@@ -15,5 +15,8 @@ const userAPI = {
   async logoutUser(payload) {
     return $axios.post("/api/v1/auth/logout", payload);
   },
+  async getUserInfo() {
+    return $axios.get("/api/v1/users/user");
+  },
 };
 export default userAPI;

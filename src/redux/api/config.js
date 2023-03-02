@@ -32,18 +32,18 @@ $axios.interceptors.request.use((request) => {
   return request;
 });
 
-// $axios.interceptors.response.use(
-//   async (response) => response,
-//   async (error) => {
-//     console.log(error);
-//     if (
-//       error?.response?.status === 422 ||
-//       error?.response?.data?.status === "Unsuccessful"
-//     ) {
-//       localStorage.removeItem("ecommerce_user");
-//       window.location.href = "/login";
-//     }
-//     return Promise.reject(error.response);
-//   }
-// );
+$axios.interceptors.response.use(
+  async (response) => response,
+  async (error) => {
+    console.log(error);
+    if (
+      error?.response?.status === 422 ||
+      error?.response?.data?.status === "Unsuccessful"
+    ) {
+      localStorage.removeItem("ecommerce_user");
+      window.location.href = "/login";
+    }
+    return Promise.reject(error.response);
+  }
+);
 export default $axios;
