@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import prodImg from "../../../assets/images/product8.png";
 
 import {
   ShoppingCartOutlined,
