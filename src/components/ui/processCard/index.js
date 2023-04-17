@@ -17,11 +17,8 @@ const ProcessCard = ({ id, image, title, content, icon }) => {
       key={id}
     >
       <div className={`process-icon`}>{icon}</div>
-
       <h5>{title}</h5>
-
       <p>{content}</p>
-     
     </div>
   );
 };

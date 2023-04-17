@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useLocation, Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import {
   ArrowDownward,
   DarkModeOutlined,
@@ -10,9 +10,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
-
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
 import { WbSunnyOutlined } from "@mui/icons-material";
 import useDarkMode from "use-dark-mode";
 
