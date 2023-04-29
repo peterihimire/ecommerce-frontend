@@ -1,8 +1,6 @@
 import React from "react";
-
 import HomeHero from "./Home/hero";
 import OneWallet from "./Home/oneWallet";
-// import Design from "./design";
 import { Helmet } from "react-helmet";
 
 const HomePage = () => {
