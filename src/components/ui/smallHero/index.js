@@ -1,7 +1,6 @@
-import React, { useCallback } from "react";
+import React from "react";
 // import heroImg from "../../../../assets/images/dev-guy-team-ladies.png";
 import { KeyboardArrowRight } from "@mui/icons-material";
-
 import { Link } from "react-router-dom";
 
 import "./styles.scss";

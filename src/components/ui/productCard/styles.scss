@@ -139,7 +139,7 @@ body.light-mode {
     border-radius: 2px;
     padding: 30px;
     position: relative;
-    height: 280px;
+    height: 350px;
     position: relative;
 
     &::after {
@@ -184,9 +184,15 @@ body.light-mode {
     }
 
     .title-price {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       h6 {
-        margin-top: 5px;
-        
+        // margin-top: 5px;
+        margin-left: 5px;
         span {
           color: grey;
           margin-left: 5px;

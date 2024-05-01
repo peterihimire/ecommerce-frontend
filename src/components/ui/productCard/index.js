@@ -43,21 +43,21 @@ const ProductCard = ({
             <FavoriteBorderOutlined className={`shop-icon`} />
           </li>
         </ul>
-        {/* <div className={`title-price`}>
+        <div className={`title-price`}>
+        <h5>{title}</h5>
+        <h6>
+          ${price}
+          <span>${price}</span>
+        </h6>
+      </div>
+      </div>
+      {/* <div className={`title-price`}>
         <h5>{title}</h5>
         <h6>
           ${price}
           <span>${price}</span>
         </h6>
       </div> */}
-      </div>
-      <div className={`title-price`}>
-        <h5>{title}</h5>
-        <h6>
-          ${price}
-          <span>${price}</span>
-        </h6>
-      </div>
     </div>
   );
 };

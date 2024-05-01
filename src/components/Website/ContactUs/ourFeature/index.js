@@ -31,7 +31,6 @@ const OurContact = () => {
             />
             <h5>Email</h5>
             <p>support@benkih.com</p>
-            {/* <p>admin@benkih.com</p> */}
           </div>
         </div>
       </div>
