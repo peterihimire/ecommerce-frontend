@@ -75,22 +75,22 @@ body._fixed {
   margin: 0 auto;
 }
 
-::-webkit-scrollbar {
-  width: 8px;
+// ::-webkit-scrollbar {
+//   width: 8px;
 
-  @media screen and (max-width: 900px) {
-    height: 6px;
-  }
+//   @media screen and (max-width: 900px) {
+//     height: 6px;
+//   }
 
-  @media screen and (max-width: 600px) {
-    height: 4px;
-  }
-}
+//   @media screen and (max-width: 600px) {
+//     height: 4px;
+//   }
+// }
 
-::-webkit-scrollbar-thumb {
-  background: var(--main-color);
-  border-radius: 2px;
-}
+// ::-webkit-scrollbar-thumb {
+//   background: var(--main-color);
+//   border-radius: 2px;
+// }
 
 // 1114px 1023px 900px 700px
 
